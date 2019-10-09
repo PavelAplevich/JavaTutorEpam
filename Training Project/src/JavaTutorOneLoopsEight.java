@@ -1,20 +1,32 @@
+    /*
+    Циклы.
+    Задание №8.
+    Даны два числа. Определить цифры, входящие в запись как первого, так и второго числа
+    */
+
 import java.util.Scanner;
 
 public class JavaTutorOneLoopsEight {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        double first = scanner.nextDouble();
-        double second = scanner.nextDouble();
-        int[] firstArray = createArrays(doubleToInteger(first));    // Создание массивов integer из double
-        int[] secondArray = createArrays(doubleToInteger(second));
-        int[] resultArray = compareArray(firstArray,secondArray);   // Создание массива повторяющихся чисел
-        sortArray(resultArray);                                     // Вывод окончательного результата
+        /*
+        Т.к. не определен метод ввода данных, я оставил заккоментированный код для проверки результата
+        через консольный ввод.
+         */
+
+
+//        Scanner scanner = new Scanner(System.in);
+//        double first = scanner.nextDouble();
+//        double second = scanner.nextDouble();
+//        int[] firstArray = createArrays(doubleToInteger(first));    // Создание массивов integer из double
+//        int[] secondArray = createArrays(doubleToInteger(second));
+//        int[] resultArray = compareArray(firstArray,secondArray);   // Создание массива повторяющихся чисел
+//        sortArray(resultArray);                                     // Вывод окончательного результата
     }
 
-    public static void sortArray(int[] resultArray){                // Сортировка и вывод конечного результата
+    public static void sortArray(int[] resultArray){                // Мето сортировки и вывода конечного результата
         int n = resultArray.length;
 
-        for ( int i = 0, m = 0; i != n; i++, n = m ) {
+        for ( int i = 0, m = 0; i != n; i++, n = m ) {              //Цикл поиска повторений в массиве
             for ( int j = m = i + 1; j != n; j++ ) {
                 if ( resultArray[j] != resultArray[i] ) {
                     if ( m != j ) resultArray[m] = resultArray[j];
@@ -22,47 +34,43 @@ public class JavaTutorOneLoopsEight {
                 }
             }
         }
-
-        if ( n != resultArray.length ) {
+        if ( n != resultArray.length ) {                            //Получение отсортированного массива
             int[] b = new int[n];
             for ( int i = 0; i < n; i++ ) b[i] = resultArray[i];
             resultArray = b;
         }
-
-        for ( int x : resultArray ) System.out.print( x + " " );
+        for ( int x : resultArray ) System.out.print( x + " " );    //Вывод результата на печать
         System.out.println();
     }
 
     public static int[] compareArray(int[] firstArray, int[] secondArray){ //Получение массива совпадающих чисел
-        int x = 0;
+        int count = 0;
         int[] resultArray;
-        for(int i = 0; i < firstArray.length; i++){
-            for (int a = 0; a < secondArray.length; a++){
+        for(int i = 0; i < firstArray.length; i++){                        //Цикл, определяющий размерность
+            for (int a = 0; a < secondArray.length; a++){                  //результирующего массива
                 if (secondArray[a] == firstArray[i]){
-                    x += 1;
+                    count += 1;
                 }
             }
         }
-
-        resultArray = new int[x];
-
-        for(int i = 0, count = 0; i < firstArray.length; i++){
-            for (int a = 0; a < secondArray.length; a++){
+        resultArray = new int[count];
+        for(int i = 0, num = 0; i < firstArray.length; i++){                //Цикл наполнения результирующего массива
+            for (int a = 0; a < secondArray.length; a++){                   //совпадающими числами
                 if (secondArray[a] == firstArray[i]){
-                    resultArray[count] = firstArray[i];
-                    count++;
+                    resultArray[num] = firstArray[i];
+                    num++;
                 }
             }
         }
         return resultArray;
     }
 
-    public static int[] createArrays(int number){   //Создание массивов из целых чисел
+    public static int[] createArrays(int number){           //Создание массива из целых чисел
                 int[] array;
                 int copyNumber = number;
 
                 for(int i = 0;;i++){
-                    if((number/=10) == 0){      //Цикл определения длины числа
+                    if((number/=10) == 0){                  //Цикл определения длины числа
                         array = new int[i+1];
                         break;
                     }
@@ -75,7 +83,7 @@ public class JavaTutorOneLoopsEight {
                 return array;
     }
 
-    public static int doubleToInteger(double number){   // Перевод дробных в целые
+    public static int doubleToInteger(double number){       //Метод перевода дробных чисел в целые числа
         for(long i = 10;;){
             if (number == (int)number){
                 break;
