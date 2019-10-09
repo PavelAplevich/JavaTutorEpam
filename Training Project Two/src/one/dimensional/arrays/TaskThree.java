@@ -1,8 +1,8 @@
 package one.dimensional.arrays;
 
 /*
-    Одномерные массивы
-    Задание №3
+    Одномерные массивы.
+    Задание №3.
     Дан массив действительных чисел, размерность которого N. Подсчитать, сколько в нем отрицательных,
     положительных и нулевых элементов.
  */
@@ -15,11 +15,11 @@ public class TaskThree {
 //        arraysTaskThree(A);
     }
 
-    public static void arraysTaskThree(double[] a){ //Метод выполняющий задачу
+    public static void arraysTaskThree(double[] a){ //Метод выполняющий задачу по выводу
         int zeroCount = 0;
         int posCount = 0;
         int negCount = 0;
-        for(double x: a){
+        for(double x: a){                           //Цикл перебора элементов массива
             if (x > 0){
                 posCount++;
             } else if (x < 0){

@@ -1,7 +1,7 @@
 package one.dimensional.arrays;
 /*
-    Одномерные массивы
-    Задание №5
+    Одномерные массивы.
+    Задание №5.
     Даны целые числа  A1...An. Вывести на печать только те числа, для который Ai > i.
  */
 
@@ -13,7 +13,7 @@ public class TaskFive {
 //        arraysTaskFive(A);
     }
 
-    public static void arraysTaskFive(double[] a){  //Метод, выполняющий задание.
+    public static void arraysTaskFive(double[] a){  //Метод, выводящий нужные элементы
         for(int i = 0; i < a.length; i++){
           if (a[i] > i){
               System.out.print(a[i] + " ");

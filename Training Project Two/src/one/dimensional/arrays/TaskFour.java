@@ -1,9 +1,9 @@
 package one.dimensional.arrays;
 
 /*
-    Одномерные массивы
-    Задание №4
-    Даны действительные числа А1...Аn. Поменять местами наибольший и наименьший элементы
+    Одномерные массивы.
+    Задание №4.
+    Даны действительные числа А1...Аn. Поменять местами наибольший и наименьший элементы.
  */
 
 public class TaskFour {
@@ -15,7 +15,7 @@ public class TaskFour {
 //        for(double x: A){ System.out.print(x + " ");}
     }
 
-    public static double[] arraysTaskFour(double[] a){  // Метод выполняющий задачу
+    public static double[] arraysTaskFour(double[] a){  // Метод выполняющий задачу по смене мест элементов
         int max = 0;
         int min = 0;
         double buf;
