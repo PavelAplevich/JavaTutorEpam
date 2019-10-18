@@ -12,18 +12,18 @@
  */
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Добро пожаловать!\n");
+        new Output().stringOutLn("Добро пожаловать!\n");
         run();
     }
 
-    public static void run(){
-        String text = Input.inputText();
-        System.out.println("Ваш текс представлен ниже: \n");
-        System.out.println(text);
-        int action = Input.chooseAction();
-        System.out.println("Вы выбрали действие №" + action + ". Ваш результат ниже: \n");
-        Action.doAction(action, text);
-        System.out.println("Вы хотите продолжить работу да/нет");
-        Input.workContinue();
+    public static void run(){// TODO: 10/18/19 Расширить программу для нескольких вариантов ввода
+        String text = new Input().inputText();
+        new Output().stringOutLn("Ваш текст представлен ниже: \n");
+        new Output().stringOutLn(text);
+        int action = new Input().chooseAction();
+        new Output().stringOutLn("Вы выбрали действие №" + action + ". Ваш результат ниже: \n");
+        new Action().doAction(action, text);
+        new Output().stringOutLn("Вы хотите продолжить работу? да/нет");
+        new Input().workContinue();
     }
 }
