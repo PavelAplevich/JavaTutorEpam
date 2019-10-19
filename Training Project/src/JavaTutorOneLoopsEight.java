@@ -1,10 +1,10 @@
+import java.util.Scanner;
+
     /*
     Циклы.
     Задание №8.
     Даны два числа. Определить цифры, входящие в запись как первого, так и второго числа
     */
-
-import java.util.Scanner;
 
 public class JavaTutorOneLoopsEight {
     public static void main(String[] args) {

@@ -7,15 +7,19 @@ public class JavaTutorOneLoopsTwo {
             y = { x, x > 2;
               = {-x, x <=2.
     */
+
     public static void main(String[] args) {
+        //Заккоментированный хард-код, использованный мной для проверки работоспособности метода.
+
+//        loopsTaskTwo(2,4,0.2);
     }
 
-    public static void LoopsTaskTwo (double a, double b, double h){ //Метод выводит значения функции на данном отрезке
+    public static void loopsTaskTwo (double a, double b, double h){ //Метод выводит значения функции на данном отрезке
         for(double i = a; i <= b; i=i+h){                           //с заданным шагом
             if (i > 2){
-                System.out.println("y = " + i);
+                System.out.printf("y = %3.3f\n",i);
             } else {
-                System.out.println("y = " + (-i));
+                System.out.printf("y = %3.3f\n",(-i));
             }
         }
     }
