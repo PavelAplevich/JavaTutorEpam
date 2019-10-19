@@ -1,8 +1,8 @@
 /*
-Точка входа в приложение. Приложение выполняет считывание файла из предоставленного полного пути. Затем пользователю
+Точка входа в приложение. Приложение выполняет считывание текста заданным способом. Затем пользователю
 предлагается выбор действия над текстом и затем выводится результат.
 
-Исходное задание:
+    Исходное задание:
     Работа с регулярными выражениями(Pattern, Matcher).
     Задание №1.
     Создать приложение, разбирающее текст (текст хранится в строке) и позволяющее выполнять с текстом три различных
@@ -12,18 +12,24 @@
  */
 public class Main {
     public static void main(String[] args) {
-        new Output().stringOutLn("Добро пожаловать!\n");
+        new Output().stringOutLnCyan("Добро пожаловать!\n");
         run();
     }
 
-    public static void run(){// TODO: 10/18/19 Расширить программу для нескольких вариантов ввода
-        String text = new Input().inputText();
-        new Output().stringOutLn("Ваш текст представлен ниже: \n");
+    //Основной метод работы с приложением.
+    public static void run(){
+        //Выбираем способ ввода текста.
+        int input = new Input().chooseInput();
+        new Output().stringOutLnCyan("Вы выбрали ввод №" + input + "\n");
+        String text = new Input().inputChoice(input);
+        new Output().stringOutLnCyan("Ваш текст представлен ниже: \n");
         new Output().stringOutLn(text);
+        //Выбираем действие над текстом.
         int action = new Input().chooseAction();
-        new Output().stringOutLn("Вы выбрали действие №" + action + ". Ваш результат ниже: \n");
+        new Output().stringOutLnCyan("Вы выбрали действие №" + action + ". Ваш результат ниже: \n");
         new Action().doAction(action, text);
-        new Output().stringOutLn("Вы хотите продолжить работу? да/нет");
+        //Выбираем продолжить работу или нет.
+        new Output().stringOutLnCyan("Вы хотите продолжить работу? да/нет");
         new Input().workContinue();
     }
 }
