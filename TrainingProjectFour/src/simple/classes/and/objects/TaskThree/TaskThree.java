@@ -1,4 +1,4 @@
-package simple.classes.and.objects;
+package simple.classes.and.objects.TaskThree;
 
 /*
     Простейшие классы и объекты.
