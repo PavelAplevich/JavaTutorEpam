@@ -1,5 +1,6 @@
 package simple.classes.and.objects.TaskThree;
 
+//Класс с действиями над студентом.
 public class StudentLogic {
 
     //Метод создания массива заданного количества студентов.

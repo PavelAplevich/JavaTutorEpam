@@ -11,4 +11,17 @@ package simple.classes.and.objects.TaskSix;
  */
 
 public class TaskSix {
+    public static void main(String[] args) {
+        //Закомментированый хард-код, использованный для проверки и демонстрации.
+
+//        Time time = new Time();
+//        time.outPut();
+//        Time time1 = new Time(10,44,11);
+//        time1.outPut();
+//        time.changeHours(10);
+//        time.changeMinute(-2);
+//        time.outPut();
+//        time.setAllData(1,24,24);
+//        time.outPut();
+    }
 }

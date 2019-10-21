@@ -1,5 +1,6 @@
 package simple.classes.and.objects.TaskThree;
 
+//Класс студента.
 public class Student{
     private String surname;
     private String initials;
@@ -23,7 +24,7 @@ public class Student{
         this.progress = progress;
     }
 
-    public void setAllDate(String surname, String initials, int groupNumber, int[] progress){
+    public void setAllData(String surname, String initials, int groupNumber, int[] progress){
         this.surname = surname;
         this.initials = initials;
         this.groupNumber = groupNumber;
