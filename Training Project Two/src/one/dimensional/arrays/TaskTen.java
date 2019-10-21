@@ -9,7 +9,7 @@ package one.dimensional.arrays;
 
 public class TaskTen {
     public static void main(String[] args) {
-        //Т.к. не указан метод ввода, оставил заккоментированный хард-код, использованный мной для проверки.
+        //Т.к. не указан метод ввода, оставил закомментированный хард-код, использованный мной для проверки.
 
 //        double[] array = new double[11];
 //        for (int i = 0; i<array.length;i++){

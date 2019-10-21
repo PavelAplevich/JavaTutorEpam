@@ -14,7 +14,7 @@ package workWith.stringAs.arrayOf.characters;
 
 public class TaskOne {
     public static void main(String[] args) {
-        //Т.к. не указан метод ввода, я оставлю закоментированный хардкод, использованный мной для проверки
+        //Т.к. не указан метод ввода, я оставлю закомментированный хардкод, использованный мной для проверки
 
 //        String[] array = {"camelCase", "SnakeCase", "tmpTmTmpTat", "АртасНУБ"};
 //        array = snakeCase(array);

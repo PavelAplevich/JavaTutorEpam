@@ -11,7 +11,7 @@ import java.math.BigInteger;
 
 public class TaskEleven {
     public static void main(String[] args) {
-        //Т.к. не указан метод ввода, оставил заккоментированный хард-код, использованный мной для проверки.
+        //Т.к. не указан метод ввода, оставил закомментированный хард-код, использованный мной для проверки.
 
 //        BigDecimal first = new BigDecimal(Math.random());
 //        BigDecimal second = new BigDecimal(Math.random());

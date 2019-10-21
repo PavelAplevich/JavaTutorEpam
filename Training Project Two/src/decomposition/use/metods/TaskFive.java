@@ -9,7 +9,7 @@ package decomposition.use.metods;
 
 public class TaskFive {
     public static void main(String[] args) {
-        //Т.к. не указан метод ввода, оставил заккоментированный хард-код, использованный мной для проверки.
+        //Т.к. не указан метод ввода, оставил закомментированный хард-код, использованный мной для проверки.
 
 //        double[] array = {0.1, 0, 2, 44, -4, -10.1, 985, 14124, -1};
 //        System.out.println(array[arrayMaxTwo(array)]);

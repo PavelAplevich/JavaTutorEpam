@@ -10,7 +10,7 @@ import static decomposition.use.metods.TaskOne.greatestCommonDivisor;
 
 public class TaskTwo {
     public static void main(String[] args) {
-        //Т.к. не указан метод ввода, оставил заккоментированный хард-код, использованный мной для проверки.
+        //Т.к. не указан метод ввода, оставил закомментированный хард-код, использованный мной для проверки.
 
 //        System.out.println(greatestCommonDivisorFour(12, 48, 64, 256));
     }

@@ -9,7 +9,7 @@ package one.dimensional.arrays;
 
 public class TaskEight {
     public static void main(String[] args) {
-        //Т.к. не указан метод ввода, оставил заккоментированный хард-код, использованный мной для проверки.
+        //Т.к. не указан метод ввода, оставил закомментированный хард-код, использованный мной для проверки.
 
 //        double[] array = {0, -1, 1, 2, -3, 4, 111, -11.345, 16, 9888, -11.345, 15, -11.345};
 //        double[] result = arrayResult(array,arrayEqualMinCount(array,arrayMin(array)),arrayMin(array));

@@ -5,7 +5,7 @@
 
 public class JavaTutorBranch {
     public static void main(String[] args) {
-        //Заккоментированный хард-код, использованный мной для проверки работоспособности методов.
+        //Закомментированный хард-код, использованный мной для проверки работоспособности методов.
 
 //        branchTaskOne(90,60);
 //        System.out.println(branchTaskTwo(1,-2,-0.1,4));

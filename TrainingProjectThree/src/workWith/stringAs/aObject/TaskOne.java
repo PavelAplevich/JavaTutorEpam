@@ -16,7 +16,7 @@ import static workWith.stringAs.arrayOf.characters.TaskFive.isSpace;
 
 public class TaskOne {
     public static void main(String[] args) {
-        //Т.к. не указан метод ввода, я оставлю закоментированный хардкод, использованный мной для проверки
+        //Т.к. не указан метод ввода, я оставлю закомментированный хардкод, использованный мной для проверки
 
 //        String str = "Строка с пробелами  которых    максимум        восемь  ";
 //        System.out.println(str);

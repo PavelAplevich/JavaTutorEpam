@@ -14,7 +14,7 @@ package tasks.arrays.of.arrays;
 
 public class TaskFour {
     public static void main(String[] args) {
-        //Т.к. не указан метод ввода, оставил заккоментированный хард-код, использованный мной для проверки
+        //Т.к. не указан метод ввода, оставил закомментированный хард-код, использованный мной для проверки
 
 //        int n = 6;
 //        printMatrixFour(n);

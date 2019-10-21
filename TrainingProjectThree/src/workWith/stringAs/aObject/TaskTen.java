@@ -9,7 +9,7 @@ package workWith.stringAs.aObject;
 
 public class TaskTen {
     public static void main(String[] args) {
-        //Т.к. не указан метод ввода, я оставлю закоментированный хардкод, использованный мной для проверки
+        //Т.к. не указан метод ввода, я оставлю закомментированный хардкод, использованный мной для проверки
 
         String str = "  А роза. упала! на лапу? Азора.";
         System.out.println("Количество предложений: " + countSentence(str));

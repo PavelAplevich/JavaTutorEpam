@@ -9,7 +9,7 @@ package workWith.stringAs.arrayOf.characters;
 
 public class TaskTwo {
     public static void main(String[] args) {
-            //Т.к. не указан метод ввода, я оставлю закоментированный хардкод, использованный мной для проверки
+            //Т.к. не указан метод ввода, я оставлю закомментированный хардкод, использованный мной для проверки
 
         String str = "wordPress call me Word int word word wide.";
         System.out.println(wordReplace(str));

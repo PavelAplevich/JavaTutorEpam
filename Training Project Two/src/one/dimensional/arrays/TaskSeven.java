@@ -10,7 +10,7 @@ package one.dimensional.arrays;
 
 public class TaskSeven {
     public static void main(String[] args) {
-    //Т.к. не указан метод ввода, оставил заккоментированный хард-код, использованный мной для проверки.
+    //Т.к. не указан метод ввода, оставил закомментированный хард-код, использованный мной для проверки.
 
 //        double[] array = {0,1,-2,10,44,15,0.1,-2.3};
 //        System.out.println(arrayMaxNumber(arraySort(array)));

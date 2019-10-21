@@ -8,7 +8,7 @@ package workWith.stringAs.aObject;
 
 public class TaskTwo {
     public static void main(String[] args) {
-        //Т.к. не указан метод ввода, я оставлю закоментированный хардкод, использованный мной для проверки
+        //Т.к. не указан метод ввода, я оставлю закомментированный хардкод, использованный мной для проверки
 
 //        String str = "aa This is very aaaa long string with aaa in aaaa random place a ";
 //        System.out.println(str);

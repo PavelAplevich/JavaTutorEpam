@@ -8,7 +8,7 @@ package workWith.stringAs.arrayOf.characters;
 
 public class TaskThree {
     public static void main(String[] args) {
-        //Т.к. не указан метод ввода, я оставлю закоментированный хардкод, использованный мной для проверки
+        //Т.к. не указан метод ввода, я оставлю закомментированный хардкод, использованный мной для проверки
 
         String str = "12.34 awwy 5 je 67Ah";
         System.out.println("Количество цифр в строке: " + countNumeralInString(str));

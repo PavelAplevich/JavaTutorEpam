@@ -8,7 +8,7 @@ public class JavaTutorOneLoopsFive {
     */
 
     public static void main(String[] args) {
-        // Т.к. не указан метод ввода данных, то я оставил заккоментированый код для проверки задания
+        // Т.к. не указан метод ввода данных, то я оставил закомментированый код для проверки задания
 
 //     System.out.println(loopsTaskFive(10, 0.5));
     }

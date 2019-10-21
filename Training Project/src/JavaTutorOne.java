@@ -7,7 +7,7 @@
 
 public class JavaTutorOne {
     public static void main(String[] args) {
-        //Заккоментированный хард-код, использованный мной для проверки работоспособности методов.
+        //Закомментированный хард-код, использованный мной для проверки работоспособности методов.
 
 //        System.out.println(linearTaskOne(0.1,0.2,3));
 //        System.out.println(linearTaskTwo(2.2, 4, 5.3));

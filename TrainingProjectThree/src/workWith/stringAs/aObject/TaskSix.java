@@ -8,7 +8,7 @@ package workWith.stringAs.aObject;
 
 public class TaskSix {
     public static void main(String[] args) {
-        //Т.к. не указан метод ввода, я оставлю закоментированный хардкод, использованный мной для проверк
+        //Т.к. не указан метод ввода, я оставлю закомментированный хардкод, использованный мной для проверк
 
 //        String str = "  А роза упала на лапу Азора";
 //        System.out.println(twoLiteral(str));

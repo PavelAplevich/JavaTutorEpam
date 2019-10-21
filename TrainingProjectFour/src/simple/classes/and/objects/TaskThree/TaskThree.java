@@ -9,77 +9,31 @@ package simple.classes.and.objects.TaskThree;
  */
 
 public class TaskThree {
-    public class Student{
-        private String surname;
-        private String initials;
-        private int groupNumber;
-        private int[] progress;
+    public static void main(String[] args) {
+            //Ниже представлен закомментированный хард-код для проверки.
 
-        //Метод создания студента.
-        public Student studentFactory(){
-            return new Student();
-        }
-
-        //Метод создания массива заданного количества студентов.
-        public Student[] arrayStudent(int count){
-            Student[] arrayStudent = new Student[count];
-            for(int i = 0; i < arrayStudent.length; i++){
-                arrayStudent[i] = studentFactory();
-            }
-            return arrayStudent;
-        }
-
-        //Метод вывода студентов, имеющих средний балл с [9,10].
-        public void printTopStudent(Student[] arrayStudent){
-            for(int i = 0; i < arrayStudent.length; i++){
-                if(arrayStudent[i].getAverageValueProgress(arrayStudent[i].getProgress()) >= 9){
-                    System.out.println(arrayStudent[i].getInitials() + " - " + arrayStudent[i].getGroupNumber() );
-                }
-            }
-        }
-
-        //Метод получения среднего балла студента.
-        public int getAverageValueProgress(int[] progress){
-            int sum = 0;
-            for(int i = 0; i < progress.length; i++){
-                sum+=progress[i];
-            }
-            return (int)(sum/progress.length);
-        }
-
-        //Набор сеттеров
-        public void setSurname(String surname) {
-            this.surname = surname;
-        }
-
-        public void setInitials(String initials) {
-            this.initials = initials;
-        }
-
-        public void setGroupNumber(int groupNumber) {
-            this.groupNumber = groupNumber;
-        }
-
-        public void setProgress(int[] progress) {
-            this.progress = progress;
-        }
-
-        //Набор геттеров
-        public String getSurname() {
-            return surname;
-        }
-
-        public String getInitials() {
-            return initials;
-        }
-
-        public int getGroupNumber() {
-            return groupNumber;
-        }
-
-        public int[] getProgress() {
-            return progress;
-        }
-
+//        Student[] arrayStudent = StudentLogic.arrayStudent(10);
+//        int[] arrayZero = {10,9,10,9};
+//        arrayStudent[0].setAllDate("Ivanov", "I.I" , 1, arrayZero);
+//        int[] arrayOne = {10,9,10,9,10};
+//        arrayStudent[1].setAllDate("Petrov", "I.I" , 2, arrayOne);
+//        int[] arrayTwo = {10,10,10};
+//        arrayStudent[2].setAllDate("Sidorov", "I.I" , 1, arrayTwo);
+//        int[] arrayThree = {10,9,2,10,9};
+//        arrayStudent[3].setAllDate("Lucas", "I.I" , 3, arrayThree);
+//        int[] arrayFour = {10,9,10,8,9};
+//        arrayStudent[4].setAllDate("Lenin", "I.I" , 4, arrayFour);
+//        int[] arrayFive = {10,9,10,7,9};
+//        arrayStudent[5].setAllDate("Napoleon", "I.I" , 3, arrayFive);
+//        int[] arraySix = {10,9,2,6,9};
+//        arrayStudent[6].setAllDate("Sergeev", "I.I" , 4, arraySix);
+//        int[] arraySeven = {10,10,10,10,10};
+//        arrayStudent[7].setAllDate("Cutuzov", "I.I" , 3, arraySeven);
+//        int[] arrayEight = {10,3,10,9};
+//        arrayStudent[8].setAllDate("Keton", "I.I" , 2, arrayEight);
+//        int[] arrayNine = {5,10,9};
+//        arrayStudent[9].setAllDate("Alibaba", "I.I" , 2, arrayNine);
+//
+//        StudentLogic.printTopStudent(arrayStudent);
     }
 }
