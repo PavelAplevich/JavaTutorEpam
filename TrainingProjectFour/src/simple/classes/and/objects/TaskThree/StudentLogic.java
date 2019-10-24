@@ -1,10 +1,12 @@
 package simple.classes.and.objects.TaskThree;
 
+import static simple.classes.and.objects.TaskThree.StudentOutput.printStudent;
+
 //Класс с действиями над студентом.
-public class StudentLogic {
+class StudentLogic {
 
     //Метод создания массива заданного количества студентов.
-    public static Student[] arrayStudent(int count){
+    static Student[] arrayStudent(int count){
         Student[] arrayStudent = new Student[count];
         for(int i = 0; i < arrayStudent.length; i++){
             arrayStudent[i] = new Student();
@@ -13,11 +15,10 @@ public class StudentLogic {
     }
 
     //Метод вывода студентов, имеющих оценки 9 и 10.
-    public static void printTopStudent(Student[] arrayStudent){
+    static void printTopStudent(Student[] arrayStudent){
         for(int i = 0; i < arrayStudent.length; i++){
             if(getTopValueProgress(arrayStudent[i].getProgress())){
-                System.out.println(arrayStudent[i].getSurname() + " " +arrayStudent[i].getInitials()
-                        + " - " + arrayStudent[i].getGroupNumber() + " group" );
+                printStudent(arrayStudent[i]);
             }
         }
     }

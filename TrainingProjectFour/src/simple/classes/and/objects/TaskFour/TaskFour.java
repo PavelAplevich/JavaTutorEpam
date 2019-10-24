@@ -25,16 +25,16 @@ public class TaskFour {
 //        array[2].setAllData("Amsterdam", 12, new GregorianCalendar(2019,10,20,8,01));
 //        array[3].setAllData("Moscow", 147, new GregorianCalendar(2019,10,20,1,21));
 //        array[4].setAllData("London", 2, new GregorianCalendar(2019,10,21, 0,00));
-
-        //Проверка сортировки по номерам.
+//
+////        Проверка сортировки по номерам.
 //        for(Train x:TrainLogic.trainArraySortNumber(array)){
 //            TrainPrint.trainPrint(x);
 //        }
-        //Проверка сортировки по направлению.
+////        Проверка сортировки по направлению.
 //        for(Train x: TrainLogic.trainArraySortDestination(array)){
 //            TrainPrint.trainPrint(x);
 //        }
-        //Проверка вывода поезда по номеру из списка.
+////        Проверка вывода поезда по номеру из списка.
 //        try{TrainPrint.trainPrint(TrainLogic.getTrain(array,-1));}
 //        catch (Exception e){
 //            System.out.println(e);

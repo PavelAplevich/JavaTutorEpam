@@ -3,10 +3,10 @@ package simple.classes.and.objects.TaskFour;
 import java.util.GregorianCalendar;
 
 //Класс действий над поездом.
-public class TrainLogic {
+class TrainLogic {
 
     //Получение поезда из массива поездов по номеру. Бросает исключение, если номера не существует.
-    public static Train getTrain(Train[] trains, int number) throws Exception{
+    static Train getTrain(Train[] trains, int number) throws Exception{
         for(Train i: trains){
             if (i.getTrainNumber() == number){
                 return i;
@@ -16,7 +16,7 @@ public class TrainLogic {
     }
 
     //Метод сортировки массива поездов по номеру.
-    public static Train[] trainArraySortNumber(Train[] array){
+    static Train[] trainArraySortNumber(Train[] array){
         for(int i = 0; i < array.length-1; i++){
             if(array[i].getTrainNumber() > array[i+1].getTrainNumber()){
                 Train buf = array[i];
@@ -29,7 +29,7 @@ public class TrainLogic {
     }
 
     //Метод сортировки массива поездов по станции назначения.
-    public static Train[] trainArraySortDestination(Train[] array){
+    static Train[] trainArraySortDestination(Train[] array){
         for(int i = 0; i < array.length-1; i++){
             if(isAlphabet(array[i].getDestination(), array[i+1].getDestination()) == 0){
                 Train buf = array[i];

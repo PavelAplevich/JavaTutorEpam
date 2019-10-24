@@ -17,4 +17,22 @@ package simple.classes.and.objects.TaskNine;
 
 
 public class TaskNine {
+
+    //Закомментированный хард-код для проверки работоспособности заданных выводов.
+
+    public static void main(String[] args) {
+//        Book[] array = Book.createBook(5);
+//        array[0].setAllData(1, "Вот я", "Джонатан Фойер", "Эскмо",2014,615,30,"Твердый");
+//        array[1].setAllData(2, "Полная иллюминация", "Джонатан Фойер", "Эскмо",2010,405,25,"Твердый");
+//        array[2].setAllData(3, "Мойдодыр", "Корней Чуйковский", "Росмэн",1964,55,5,"Мягкий");
+//        array[3].setAllData(4, "Вот я", "Джонатан Фойер", "Эскмо",2014,615,30,"Мягкий");
+//        array[4].setAllData(5, "Алхимик", "Пауло Коэльо", "Росмэн",1982,311,20,"Мягкий");
+//
+//        BookArray arrayBook = new BookArray(array);
+//        arrayBook.printAuthorList("Джонатан Фойер");
+//        System.out.println();
+//        arrayBook.printPublishingList("Росмэн");
+//        System.out.println();
+//        arrayBook.printYearList(1980);
+    }
 }

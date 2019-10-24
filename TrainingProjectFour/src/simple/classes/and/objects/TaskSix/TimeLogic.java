@@ -13,5 +13,4 @@ class TimeLogic {
     static void  changeSecond(Time time, int second){
         time.setSecond(time.getSecond() + second);
     }
-    //TODO  Продолжить с задания 7 и срефакторить задания 3 4 5
 }

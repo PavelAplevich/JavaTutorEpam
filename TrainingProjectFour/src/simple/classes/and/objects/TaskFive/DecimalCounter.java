@@ -1,45 +1,45 @@
 package simple.classes.and.objects.TaskFive;
 
-public class DecimalCounter {
+class DecimalCounter {
     private int begin = 0;
     private int end = 100;
     private int value = 0;
 
     //Конструкторы класса
-    public DecimalCounter(){}
+    DecimalCounter(){}
 
-    public DecimalCounter(int begin, int end, int value){
+    DecimalCounter(int begin, int end, int value){
         this.begin = begin;
         this.value = value;
         this.end = end;
     }
 
     //Сеттеры и геттеры класса
-    public int getBegin() {
+    int getBegin() {
         return begin;
     }
 
-    public void setBegin(int begin) {
+    void setBegin(int begin) {
         this.begin = begin;
     }
 
-    public int getEnd() {
+    int getEnd() {
         return end;
     }
 
-    public void setEnd(int end) {
+    void setEnd(int end) {
         this.end = end;
     }
 
-    public int getValue() {
+    int getValue() {
         return value;
     }
 
-    public void setValue(int value) {
+    void setValue(int value) {
         this.value = value;
     }
 
-    public void setAllData(int begin, int value, int end){
+    void setAllData(int begin, int value, int end){
         this.begin = begin;
         this.value = value;
         this.end = end;
