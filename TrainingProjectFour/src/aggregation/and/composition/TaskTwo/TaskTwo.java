@@ -1,6 +1,5 @@
 package aggregation.and.composition.TaskTwo;
 
-
 /*
     Агрегация и композиция.
     Задание №2.
@@ -9,4 +8,8 @@ package aggregation.and.composition.TaskTwo;
  */
 
 public class TaskTwo {
+    public static void main(String[] args) {
+        Car car = new Car("Audi");
+        car.printModel();
+    }
 }
