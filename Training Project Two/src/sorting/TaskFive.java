@@ -1,5 +1,4 @@
 package sorting;
-// TODO: 13.10.2019  DODELAT'!
 
     /*
     Одномерные массивы. Сортировки.
@@ -13,39 +12,48 @@ package sorting;
 
      */
 
+import java.util.Arrays;
+
 public class TaskFive {
     public static void main(String[] args) {
         //Т.к. не указан метод ввода, оставил закомментированный хард-код, использованный мной для проверки
 
-//        double[] array = { 3.3, -0.1, -1, 0, 2, 4, 78, 111, 8923, -2, 44, -18.18, -777.7, 11.1234};
-//        insertionSortArray(array);
+//        double[] array = { 3.3, -0.1, -1, 0, 0, 2, 4, 78, 111, 8923, -2, 44, -18.18, -777.7, 111, 11.1234};
+//        System.out.println(Arrays.toString(insertionSortArray(array)));
     }
-//
-//    private static int binarySearch(double[] array,double key,int left, int right){
-//        int middle = left+(right-left)/2;
-//        if (key < array[middle]){
-//            binarySearch(array,key,left,middle);
-//        } else if(key > array[middle]){
-//            binarySearch(array,key,middle,right);
-//        } else {
-//            return middle;
-//        }
-//    }
-//
-//    private static void insertionSortArray(double[] array){
-//        double[] resultArray = new double[array.length];
-//        for(int j = 1; j < array.length; j++){
-//            double key = array[j];
-//             int i = j-1;
-////             binarySearch(array, key, 0, j );
-//             while (i >= 0 && array[i] > key){
-//                 resultArray[i+1] = resultArray[i];
-//                 i--;
-//             }
-//             resultArray[i+1] = key;
-//        }
-//        for(double x: resultArray){
-//            System.out.print(x + " ");
-//        }
-//    }
+
+    //Метод сортировки вставками.
+    private static double[] insertionSortArray(double[] array){
+        for (int i = 1; i < array.length; i++) {
+            double key = array[i];
+            int index = binarySearch(array,0, i, key);
+            for(int j = i; j!=index;j--){
+                array[j] = array[j-1];
+            }
+            array[index] = key;
+        }
+        return array;
+    }
+
+    //Метод бинарного поиска индекса вставки.
+    private static int binarySearch(double[] array, int left, int right, double key) {
+        int middle =left + (right - left) / 2;
+        if(array[middle] == key){return middle+1;}  //Условие обработки повторений.
+        if(middle==0){                              //Условия для предотвращения попытки доступа к -1 элементу массива.
+            if(key < array[middle]){
+                return middle;
+            } else{
+                return middle + 1;
+            }
+        }
+        if(key < array[middle] && key > array[middle - 1]){
+            return middle;
+        } else if(key < array[middle]){
+            return binarySearch(array, left, middle, key);
+        } else if(key > array[middle] && key <= array[middle + 1]){
+            return middle+1;
+        } else {
+            return binarySearch(array,middle,right,key);
+        }
+    }
 }
