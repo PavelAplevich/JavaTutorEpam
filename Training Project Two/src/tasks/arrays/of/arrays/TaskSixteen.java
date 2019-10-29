@@ -16,7 +16,7 @@ import java.util.Random;
 
 public class TaskSixteen {
 
-    final static int N = 3;         //Размерность матрицы
+    final static int N = 4;         //Размерность матрицы
     final static int RULE = N*(N*N+1)/2;        //Правило магического квадрата для матрицы N x N
     public static Random random = new Random(System.nanoTime()); //Генератор случайного числа
 
@@ -42,8 +42,7 @@ public class TaskSixteen {
     Мой метод генерации магического квадрата заключается в том, что пока не выполнится правило магического квадрата
     для всех линий, столбцов и диагоналей, метод будет переставлять два случайных числа в массиве и рекурсивно вызывать
     себя. Получив таким образом магический квадрат, метод возвращает его. В теории на мощных машинах с
-    большим запасом времени можно составить таким образом магический квадрат любой размерности. На практике с размером
-    кучи в 1гб в моей  IDEA, я получал stackOverflow уже на размерности 3.
+    большим запасом времени можно составить таким образом магический квадрат любой размерности.
      */
 
     private static int[][] magicSquare(int[][] array){      //Метод генерации магического квадрата
@@ -59,8 +58,9 @@ public class TaskSixteen {
                 sumDiag+=array[array.length-line-1][array.length-line-1];
             }                                           //Проверка сумм линий, столбцов и диагоналей на правило
             if((sumLine != RULE) || (sumColumn != RULE) || (sumDiag != RULE) || (sumMainDiag != RULE)){
-                magicSquare(swap(array,random.nextInt(N),random.nextInt(N),random.nextInt(N),random.nextInt(N)));
-            }                      //Если не проходит проверку, рекурсивно вызывает метод с переставленными элементами
+                array = swap(array,random.nextInt(N),random.nextInt(N),random.nextInt(N),random.nextInt(N));
+                column = 0;
+            }
         }
         return array;
     }

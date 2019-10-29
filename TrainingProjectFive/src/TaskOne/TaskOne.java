@@ -5,6 +5,7 @@
 
 package TaskOne;
 
+
 /*
     Основы ООП.
     Задание №1.
@@ -13,4 +14,16 @@ package TaskOne;
  */
 
 public class TaskOne {
+    public static void main(String[] args) {
+        //Т.к. не указан метод ввода, оставляю хард-код для проверки.
+
+        //В строковую переменную необходимо вставить путь директории, в которую вы хотите оперировать с файлом.
+//        String youDirectory = "Put your directory here...";
+//        Directory directory = new Directory(youDirectory);
+//        TextFile textFile = new TextFile("Text.txt");
+//        textFile.create(directory);
+//        textFile.addInfo("Privet!");
+//        textFile.fileOut();
+
+    }
 }
