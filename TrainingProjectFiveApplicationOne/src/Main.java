@@ -28,7 +28,7 @@ public class Main {
     public static void main(String[] args) throws Exception {
         TreasureOut.printOutGreen("Добро пожаловать в программу Дракон и его сокровища! " +
                 "Для ознакомления с возможностями программы, прочтите пожалуйста файл \u001B[31mREADME.md\u001B[0m\n");
-//        run();
+        run();
 
         TreasureBase treasureBase = new TreasureBase();
         TreasureIn.createTreasureBase(treasureBase);
@@ -39,7 +39,11 @@ public class Main {
 
     }
 
-//    static void run(){
-//
-//    }
+    static void run(){
+        TreasureOut.printOutGreen("Выберите действие, которое вы хотите произвести: \n" +
+                "1. Сгенерировать 100 случайных сокровищ в пещере.\n" +
+                "2. Вывести список всех сокровищ.\n" +
+                "3. Вывести предложение по покупке сокровищ на заданную сумму.\n" +
+                "4. Выбрать определенное сокровище по его номеру в пещере");
+    }
 }
