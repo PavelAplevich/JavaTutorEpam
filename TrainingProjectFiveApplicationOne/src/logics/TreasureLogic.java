@@ -6,17 +6,10 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 
+//Класс основной логики базы сокровищ.
 public class TreasureLogic {
 
-    public static void addTreasures(TreasureBase treasuresBase, TreasureBase.Treasure[] treasures){
-        ArrayList<TreasureBase.Treasure> buf;
-        buf = treasuresBase.getTreasures();
-        for(TreasureBase.Treasure x: treasures){
-            buf.add(x);
-        }
-        treasuresBase.setTreasures(buf);
-    }
-
+    //Метод с реализацией выбора лучшего сокровища.
     public static TreasureBase.Treasure chooseTopTreasure(TreasureBase treasureBase) throws Exception {
         int maxPrice = 0;
         for(TreasureBase.Treasure x: treasureBase.getTreasures()){
@@ -32,6 +25,7 @@ public class TreasureLogic {
         throw new Exception("Something do wrong...");
     }
 
+    //Метод с реализацией выбора сокровища по номеру.
     public static TreasureBase.Treasure chooseTreasure(TreasureBase treasureBase, int number) throws Exception {
         for(TreasureBase.Treasure x: treasureBase.getTreasures()){
             if(x.getNumber() == number){
@@ -41,6 +35,7 @@ public class TreasureLogic {
         throw new Exception("Something do wrong...");
     }
 
+    //Метод с реализацией вывода торгового предложения.
     public static void printOffer(TreasureBase treasureBase, int money){
         Collections.shuffle(treasureBase.getTreasures());
         int sum = 0;
@@ -59,5 +54,15 @@ public class TreasureLogic {
             }
         });
         TreasureOut.printOutCyan("Total price: " + sum);
+    }
+
+    //Метод с реализацией добавления сокровища в пещеру.
+    public static void addTreasures(TreasureBase treasuresBase, TreasureBase.Treasure[] treasures){
+        ArrayList<TreasureBase.Treasure> buf;
+        buf = treasuresBase.getTreasures();
+        for(TreasureBase.Treasure x: treasures){
+            buf.add(x);
+        }
+        treasuresBase.setTreasures(buf);
     }
 }

@@ -1,7 +1,6 @@
-package logics;
+package logic;
 
-//Класс реализующий логику вывода сокровищ.
-public class TreasureOut {
+public class Output {
 
     static public void printOut(String string){
         System.out.println(string);
@@ -34,6 +33,5 @@ public class TreasureOut {
     static public void printOutWhite(String string){
         System.out.println("\u001B[37m" + string + "\u001B[0m");
     }
-
 
 }

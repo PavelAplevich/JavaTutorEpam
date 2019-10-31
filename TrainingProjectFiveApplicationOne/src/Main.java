@@ -23,27 +23,36 @@
 import data.TreasureBase;
 import logics.TreasureIn;
 import logics.TreasureOut;
+import java.util.Scanner;
 
 public class Main {
+
+    //Точка входа с приветственным сообщением.
     public static void main(String[] args) throws Exception {
         TreasureOut.printOutGreen("Добро пожаловать в программу Дракон и его сокровища! " +
                 "Для ознакомления с возможностями программы, прочтите пожалуйста файл \u001B[31mREADME.md\u001B[0m\n");
-        run();
-
         TreasureBase treasureBase = new TreasureBase();
-        TreasureIn.createTreasureBase(treasureBase);
-        for(TreasureBase.Treasure x : treasureBase.getTreasures()){
-            System.out.println(x.toString());
-        }
-        System.out.println(treasureBase.chooseTopTreasure());
-
+        run(treasureBase);
     }
 
-    static void run(){
+    //Основной метод работы приложения.
+    static void run(TreasureBase treasureBase) throws Exception {
         TreasureOut.printOutGreen("Выберите действие, которое вы хотите произвести: \n" +
                 "1. Сгенерировать 100 случайных сокровищ в пещере.\n" +
                 "2. Вывести список всех сокровищ.\n" +
                 "3. Вывести предложение по покупке сокровищ на заданную сумму.\n" +
-                "4. Выбрать определенное сокровище по его номеру в пещере");
+                "4. Выбрать определенное сокровище по его номеру в пещере.\n" +
+                "5. Выбрать лучшее сокровище в пещере дракона.");
+        TreasureIn.chooseAction(treasureBase);
+        TreasureOut.printOutGreen("Хотите продолжить работу с программой?\n" +
+                "1. Да.\n" +
+                "2. Нет.");
+        Scanner scanner = new Scanner(System.in);
+        int choice = scanner.nextInt();
+        if(choice == 1){
+            run(treasureBase);
+        } else {
+            TreasureOut.printOutGreen("Дракон машет вам своим крылом на прощание...");
+        }
     }
 }
