@@ -1,8 +1,34 @@
 package person;
 
+import action.Action;
+import action.AdminAction;
+import menu.AdminMenu;
+import menu.Menu;
+
+import java.io.IOException;
+import java.net.URISyntaxException;
+
 public class Admin extends Person{
 
     public Admin(String login, String email) {
         super(login, email);
+    }
+
+    @Override
+    public void doAction(int action) throws URISyntaxException, IOException {
+        Action act = new AdminAction();
+        act.doAction(this, action);
+    }
+
+    @Override
+    public int chooseAction() {
+        Action action = new AdminAction();
+        return action.chooseAction(this);
+    }
+
+    @Override
+    public void showMenu() {
+        Menu menu = new AdminMenu();
+        menu.showMenu();
     }
 }

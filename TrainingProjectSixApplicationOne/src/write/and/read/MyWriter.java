@@ -1,7 +1,7 @@
 package write.and.read;
 
-import authentication.user.Authentication;
 
+import authentication.Authentication;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -11,8 +11,33 @@ import java.net.URL;
 import java.nio.file.Paths;
 
 public class MyWriter {
+
+    public static void addBook(String title, String author, int pages, String type, String path) throws URISyntaxException, IOException {
+        URL resource = Authentication.class.getResource("Catalog.txt");
+        File file = Paths.get(resource.toURI()).toFile();
+        FileWriter fileWriter = new FileWriter(file,true);
+        fileWriter.write("Title:" + "\"" + title + "\"" + " " +
+                "Author:" + "\"" + author + "\"" + " " +
+                "Pages:" + "\"" + pages + "\"" + " " +
+                "Type:" + "\"" + type + "\"" + " " +
+                "Path:" + "\"" + path + "\"" + "\n");
+        fileWriter.close();
+    }
+
+    public static void addBook(String title, String author, int pages, String type) throws URISyntaxException, IOException {
+        URL resource = Authentication.class.getResource("Catalog.txt");
+        File file = Paths.get(resource.toURI()).toFile();
+        FileWriter fileWriter = new FileWriter(file,true);
+        fileWriter.write("Title:" + "\"" + title + "\"" + " " +
+                "Author:" + "\"" + author + "\"" + " " +
+                "Pages:" + "\"" + pages + "\"" + " " +
+                "Type:" + "\"" + type + "\"" + " " + "\n");
+        fileWriter.close();
+    }
+
+
     public static void writeNewUser(String login, String password, String email) throws URISyntaxException, IOException {
-        URL resource = MyWriter.class.getResource("Authentication.txt");
+        URL resource = Authentication.class.getResource("Authentication.txt");
         File file = Paths.get(resource.toURI()).toFile();
         FileWriter fileWriter = new FileWriter(file, true);
         byte[] cryptoPas = encode(password, "readme");

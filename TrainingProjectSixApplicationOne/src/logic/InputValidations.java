@@ -1,8 +1,7 @@
 package logic;
 
+import authentication.Authentication;
 import write.and.read.MyReader;
-import write.and.read.MyWriter;
-
 import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
@@ -78,7 +77,7 @@ public class InputValidations {
     }
 
     private static boolean isExist(String login) throws URISyntaxException, IOException {
-        URL resource = MyWriter.class.getResource("Authentication.txt");
+        URL resource = Authentication.class.getResource("Authentication.txt");
         File file = Paths.get(resource.toURI()).toFile();
         return MyReader.findString(login, file);
     }

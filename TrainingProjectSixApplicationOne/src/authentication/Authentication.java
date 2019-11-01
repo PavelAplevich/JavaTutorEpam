@@ -1,12 +1,14 @@
-package authentication.user;
+package authentication;
 
-import logic.Input;
+import logic.InputValidations;
 import logic.Output;
+import person.Admin;
+import person.Person;
+import person.User;
 import write.and.read.MyReader;
 import write.and.read.MyWriter;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.net.URL;
@@ -14,7 +16,18 @@ import java.nio.file.Paths;
 import java.util.Scanner;
 
 public class Authentication {
-    public static void userIn() throws URISyntaxException, IOException {
+
+    public static Person chooseUser() throws IOException, URISyntaxException {
+        Output.printOutPurple("1. Создать нового пользователя.\n2. У меня есть аккаунт.");
+        int choice = InputValidations.checkOneTwo();
+        if(choice == 1){
+            return CreateUser.createNewUser();
+        } else {
+            return Authentication.userIn();
+        }
+    }
+
+    private static Person userIn() throws URISyntaxException, IOException {
         Output.printOutBlue("Ваш логин:");
         String login = "";
         Scanner scanner = new Scanner(System.in);
@@ -22,7 +35,7 @@ public class Authentication {
             login = scanner.nextLine();
             if(!isExist(login)){
                 Output.printOutRed("Такого пользователя не существует! Попробуйте ещё раз..");
-                userIn();
+                return userIn();
             }
         }
         Output.printOutBlue("Введите ваш пароль:");
@@ -35,19 +48,19 @@ public class Authentication {
             }
             if(!isExist(result.toString())){
                 Output.printOutRed("Пароль неккоректен! Попробуйте ещё раз..");
-                userIn();
+                return userIn();
             }
         }
         Output.printOutBlue("Вход успешно завершён!\n");
         if(login.equals("administrator")){
-            Input.menu("admin");
+            return new Admin(login, MyReader.findEmail(login));
         } else {
-            Input.menu("login");
+            return new User(login, MyReader.findEmail(login));
         }
     }
 
     private static boolean isExist(String login) throws URISyntaxException, IOException {
-        URL resource = MyWriter.class.getResource("Authentication.txt");
+        URL resource = Authentication.class.getResource("Authentication.txt");
         File file = Paths.get(resource.toURI()).toFile();
         if(MyReader.findString(login, file)){
             return true;

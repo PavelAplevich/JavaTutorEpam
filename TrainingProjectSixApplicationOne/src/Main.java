@@ -23,8 +23,10 @@
  */
 
 
-import logic.Input;
+import action.Action;
+import authentication.Authentication;
 import logic.Output;
+import person.Person;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
@@ -32,7 +34,10 @@ import java.net.URISyntaxException;
 public class Main {
     public static void main(String[] args) throws IOException, URISyntaxException {
         Output.printOutGreen("Добро пожаловать в программу учета книг.");
-        Input.chooseUser();
+        Person person = Authentication.chooseUser();
+        person.showMenu();
+        int action = person.chooseAction();
+        person.doAction(action);
     }
 
 
