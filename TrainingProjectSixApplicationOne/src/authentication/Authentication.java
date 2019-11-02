@@ -1,6 +1,5 @@
 package authentication;
 
-import logic.InputValidations;
 import logic.Output;
 import person.Admin;
 import person.Person;

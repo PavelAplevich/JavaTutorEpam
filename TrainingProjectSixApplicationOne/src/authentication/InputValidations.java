@@ -1,6 +1,7 @@
-package logic;
+package authentication;
 
 import authentication.Authentication;
+import logic.Output;
 import write.and.read.MyReader;
 import java.io.File;
 import java.io.IOException;

@@ -2,6 +2,7 @@ package person;
 
 import action.Action;
 import action.UserAction;
+import catalog.Catalog;
 import menu.Menu;
 import menu.UserMenu;
 
@@ -14,9 +15,9 @@ public class User extends Person{
     }
 
     @Override
-    public void doAction(int action) throws URISyntaxException, IOException {
+    public void doAction(int action, Catalog catalog) throws URISyntaxException, IOException {
         Action act = new UserAction();
-        act.doAction(this, action);
+        act.doAction(this, action, catalog);
     }
 
     @Override

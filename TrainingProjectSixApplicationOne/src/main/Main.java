@@ -1,3 +1,4 @@
+package main;
 /*
    В этом проекте представлено первое приложение из шестого модуля. Классы приложения расположены в своих пакетах,
    согласно логике. Код сопровожден минимальными комментариями. Основная информация по работе приложения представлена
@@ -22,12 +23,11 @@
     не хранится в открытом виде.
  */
 
-
-import action.Action;
 import authentication.Authentication;
+import catalog.Catalog;
+import logic.Logic;
 import logic.Output;
 import person.Person;
-
 import java.io.IOException;
 import java.net.URISyntaxException;
 
@@ -35,10 +35,15 @@ public class Main {
     public static void main(String[] args) throws IOException, URISyntaxException {
         Output.printOutGreen("Добро пожаловать в программу учета книг.");
         Person person = Authentication.chooseUser();
-        person.showMenu();
-        int action = person.chooseAction();
-        person.doAction(action);
+        Catalog catalog = Logic.createCatalog();
+        System.out.println(catalog.toString());
+        run(person, catalog);
     }
 
-
+    public static void run(Person person, Catalog catalog) throws IOException, URISyntaxException {
+        person.showMenu();
+        int action = person.chooseAction();
+        person.doAction(action, catalog);
+        person.resume(catalog);
+    }
 }

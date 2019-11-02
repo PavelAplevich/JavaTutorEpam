@@ -1,6 +1,8 @@
 package person;
 
 import action.Action;
+import catalog.Catalog;
+import logic.Logic;
 import menu.Menu;
 
 import java.io.FileNotFoundException;
@@ -11,9 +13,13 @@ public class Person {
     private String login;
     private String email;
 
-    public void doAction(int action) throws URISyntaxException, IOException {
+    public void resume(Catalog catalog) throws IOException, URISyntaxException {
+        Logic.resume(this, catalog);
+    }
+
+    public void doAction(int action, Catalog catalog) throws URISyntaxException, IOException {
         Action act = new Action();
-        act.doAction(this, action);
+        act.doAction(this, action, catalog);
     }
 
     public int chooseAction(){

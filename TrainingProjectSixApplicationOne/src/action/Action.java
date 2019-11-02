@@ -1,5 +1,6 @@
 package action;
 
+import catalog.Catalog;
 import person.Person;
 import java.io.IOException;
 import java.net.URISyntaxException;
@@ -10,16 +11,16 @@ public class Action{
         return -1;
     }
 
-    public void doAction(Person person, int action) throws URISyntaxException, IOException {
+    public void doAction(Person person, int action, Catalog catalog) throws URISyntaxException, IOException {
         switch (action){
             case 1:
-                ActionLogic.printCatalog();
+                ActionLogic.printCatalog(catalog);
                 break;
             case 2:
-                ActionLogic.findBook();
+                ActionLogic.findBook(catalog);
                 break;
             case 3:
-                ActionLogic.readBook();
+                ActionLogic.readBook(catalog);
                 break;
         }
     }

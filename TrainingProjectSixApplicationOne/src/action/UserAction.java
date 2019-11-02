@@ -1,5 +1,6 @@
 package action;
 
+import catalog.Catalog;
 import logic.Output;
 import person.Person;
 
@@ -11,8 +12,8 @@ import java.util.Scanner;
 public class UserAction extends Action {
 
     @Override
-    public void doAction(Person person, int action) throws IOException, URISyntaxException {
-        super.doAction(person, action);
+    public void doAction(Person person, int action, Catalog catalog) throws IOException, URISyntaxException {
+        super.doAction(person, action, catalog);
         switch (action){
             case 4:
                 ActionLogic.offerBook();
