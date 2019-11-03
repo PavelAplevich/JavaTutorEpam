@@ -1,3 +1,0 @@
-Title:Moscow Author:Jack Moscow Pages:111 Type:eBook Path:Lalalend
-Title:London Author:Jack london Pages:111 Type:eBook Path:e:London Author:Jack london Pages:111 Type:PaperBook
-Title:Moscow Author:Lola Pages:120 Type:eBook Path:lala
