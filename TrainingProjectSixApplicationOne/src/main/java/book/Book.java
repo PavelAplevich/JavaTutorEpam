@@ -1,4 +1,4 @@
-package catalog;
+package book;
 
 public class Book {
     private String title;

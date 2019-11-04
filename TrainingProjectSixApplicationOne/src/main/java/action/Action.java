@@ -1,6 +1,6 @@
 package action;
 
-import catalog.Catalog;
+import book.Catalog;
 import person.Person;
 import java.io.IOException;
 

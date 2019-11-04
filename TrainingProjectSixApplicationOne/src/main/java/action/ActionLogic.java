@@ -1,9 +1,10 @@
 package action;
 
-import catalog.Book;
-import catalog.Catalog;
-import catalog.EBook;
-import catalog.PaperBook;
+import authentication.InputValidations;
+import book.Book;
+import book.Catalog;
+import book.EBook;
+import book.PaperBook;
 import logic.Logic;
 import logic.Output;
 import logic.email;
@@ -11,6 +12,7 @@ import person.Person;
 import write.and.read.MyReader;
 import write.and.read.MyWriter;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
@@ -21,7 +23,37 @@ public class ActionLogic {
         if(catalog.getCatalog().isEmpty()){
             Output.printOutRed("Каталог пуст!");
         } else {
-            Output.printOutPurple(catalog.toString());
+            for(int i = 0; i <= catalog.getCatalog().size(); i++){
+                if(i == catalog.getCatalog().size()){
+                    Output.printOutCyan("Нажмите \'A\' + Enter, чтобы промотать каталог вверх..");
+                    Output.printOutRed("Нажмите \'D\' + Enter, закончить просматривать каталог..");
+                    if(InputValidations.checkPointer()){
+                        break;
+                    } else {
+                        i = i - 22;
+                        if(i < 0){
+                            i = -1;
+                        }
+                        continue;
+                    }
+                }
+                Output.printOutPurple(catalog.getCatalog().get(i).toString());
+                if( (i+1)%11 == 0){
+                    Output.printOutCyan("Нажмите \'A\' + Enter, чтобы промотать каталог вверх..");
+                    Output.printOutCyan("Нажмите \'D\' + Enter, чтобы промотать каталог вниз..");
+                    if(InputValidations.checkPointer()){
+                        continue;
+                    } else {
+                        i = i - 22;
+                        if(i < 0){
+                            i = -1;
+                        }
+                        continue;
+                    }
+                } else {
+                    continue;
+                }
+            }
         }
     }
 
@@ -43,9 +75,8 @@ public class ActionLogic {
         }
     }
 
-    static void readBook(Catalog catalog){
-
-//        MyWriter.readBook();
+    static void readBook(Catalog catalog) throws FileNotFoundException {
+        MyReader.readBook(catalog);
     }
 
     static void addBook(Person person, Catalog catalog) throws IOException {
@@ -87,7 +118,7 @@ public class ActionLogic {
                     Output.printOutPurple(count + ". " + x.toString());
                     count++;
                 }
-                Book bookRemoved = Logic.removeBook(result,count);
+                Book bookRemoved = Logic.removeOrReadBook(result,count);
                 catalog.getCatalog().remove(bookRemoved);
                 MyWriter.writeCatalog(catalog);
             }
@@ -97,8 +128,26 @@ public class ActionLogic {
         }
     }
 
-    //Todo  Продолжить делать логику
-    static void offerBook(){}
+    static void offerBook(Person person) throws IOException {
+        Output.printOutBlue("Введите тип книги:\n" +
+                "1. Electronic book\n" +
+                "2. Paper book");
+        String type = addType();
+        Output.printOutBlue("Введите название книги, которую вы хотите добавить:");
+        String title = addString();
+        Output.printOutBlue("Введите автора книги:");
+        String author = addString();
+        Output.printOutBlue("Введите количество страниц:");
+        int pages = addInt();
+        if(type.equals("eBook")){
+            Output.printOutBlue("Введите полный путь до книги в вашем устройстве: ");
+            String path = addString();
+            email.sendEmailtoAdmin(person, new EBook(title,author,pages, path));
+        } else {
+            email.sendEmailtoAdmin(person, new PaperBook(title,author,pages));
+        }
+
+    }
 
     private static int addInt(){
         Scanner scanner = new Scanner(System.in);

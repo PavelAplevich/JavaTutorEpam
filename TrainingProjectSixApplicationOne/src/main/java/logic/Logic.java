@@ -2,12 +2,14 @@ package logic;
 
 import action.Main;
 import authentication.InputValidations;
-import catalog.Book;
-import catalog.Catalog;
-import catalog.EBook;
-import catalog.PaperBook;
+import book.Book;
+import book.Catalog;
+import book.EBook;
+import book.PaperBook;
 import person.Person;
-
+import write.and.read.MyReader;
+import javax.mail.internet.AddressException;
+import javax.mail.internet.InternetAddress;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
@@ -15,6 +17,24 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Logic {
+
+    public static InternetAddress[] createMailing(Person person) throws IOException, AddressException {
+        ArrayList<String> resultList = new ArrayList<>();
+        FileReader fileReader = new FileReader(Path.getAuthentication());
+        Scanner scanner = new Scanner(fileReader);
+        while(scanner.hasNextLine()){
+            String login = scanner.next();
+            if(login != person.getLogin()){
+                resultList.add(MyReader.findEmail(login));
+            }
+            scanner.nextLine();
+        }
+        InternetAddress[] result = new InternetAddress[resultList.size()];
+        for(int i = 0; i < resultList.size(); i++){
+            result[i] = new InternetAddress(resultList.get(i));
+        }
+        return result;
+    }
 
     public static Catalog createCatalog() throws FileNotFoundException {
         FileReader fileReader = new FileReader(Path.getCatalog());
@@ -39,19 +59,19 @@ public class Logic {
         return new Catalog(list);
     }
 
-    public static Book removeBook(Catalog catalog, int count){
+    public static Book removeOrReadBook(Catalog catalog, int count){
         Scanner scanner = new Scanner(System.in);
         if(scanner.hasNextInt()){
             int choice = scanner.nextInt();
             if(choice < 1 || choice > count){
                 Output.printOutRed("Неккоректный ввод, попробуйте ещё раз.");
-                return removeBook(catalog, count);
+                return removeOrReadBook(catalog, count);
             } else {
                return catalog.getCatalog().get(choice-1);
             }
         } else {
             Output.printOutRed("Неккоректный ввод, попробуйте ещё раз.");
-            return removeBook(catalog, count);
+            return removeOrReadBook(catalog, count);
         }
     }
 

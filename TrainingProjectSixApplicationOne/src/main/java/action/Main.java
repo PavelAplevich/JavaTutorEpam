@@ -24,21 +24,22 @@ package action;
  */
 
 import authentication.Authentication;
-import catalog.Catalog;
+import book.Catalog;
 import logic.Logic;
 import logic.Output;
 import person.Person;
+
 import java.io.IOException;
 
 public class Main {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException{
         Output.printOutGreen("Добро пожаловать в программу учета книг.");
         Person person = Authentication.chooseUser();
         Catalog catalog = Logic.createCatalog();
         run(person, catalog);
     }
 
-    public static void run(Person person, Catalog catalog) throws IOException {
+    public static void run(Person person, Catalog catalog) throws IOException{
         person.showMenu();
         int action = person.chooseAction();
         person.doAction(action, catalog);

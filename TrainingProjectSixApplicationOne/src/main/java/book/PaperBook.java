@@ -1,4 +1,4 @@
-package catalog;
+package book;
 
 public class PaperBook extends Book{
     public PaperBook(String title, String author, int pages) {

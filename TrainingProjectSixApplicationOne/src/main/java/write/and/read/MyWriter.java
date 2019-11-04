@@ -1,7 +1,7 @@
 package write.and.read;
 
-import catalog.Book;
-import catalog.Catalog;
+import book.Book;
+import book.Catalog;
 import logic.Path;
 import java.io.File;
 import java.io.FileWriter;
@@ -40,9 +40,6 @@ public class MyWriter {
         return res;
     }
 
-    public static void readBook(Book book){
-
-    }
 
     public static void writeCatalog(Catalog catalog) throws IOException {
         FileWriter fileWriter = new FileWriter(Path.getCatalog(),false);

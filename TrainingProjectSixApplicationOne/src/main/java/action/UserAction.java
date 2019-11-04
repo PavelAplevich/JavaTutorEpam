@@ -1,6 +1,6 @@
 package action;
 
-import catalog.Catalog;
+import book.Catalog;
 import logic.Output;
 import person.Person;
 import java.io.IOException;
@@ -9,11 +9,11 @@ import java.util.Scanner;
 public class UserAction extends Action {
 
     @Override
-    public void doAction(Person person, int action, Catalog catalog) throws IOException {
+    public void doAction(Person person, int action, Catalog catalog) throws IOException{
         super.doAction(person, action, catalog);
         switch (action){
             case 4:
-                ActionLogic.offerBook();
+                ActionLogic.offerBook(person);
                 break;
         }
     }

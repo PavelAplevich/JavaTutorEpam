@@ -1,20 +1,21 @@
 package person;
 
 import action.Action;
-import catalog.Catalog;
+import book.Catalog;
 import logic.Logic;
 import menu.Menu;
+
 import java.io.IOException;
 
 public class Person {
     private String login;
     private String email;
 
-    public void resume(Catalog catalog) throws IOException {
+    public void resume(Catalog catalog) throws IOException{
         Logic.resume(this, catalog);
     }
 
-    public void doAction(int action, Catalog catalog) throws IOException {
+    public void doAction(int action, Catalog catalog) throws IOException{
         Action act = new Action();
         act.doAction(this, action, catalog);
     }

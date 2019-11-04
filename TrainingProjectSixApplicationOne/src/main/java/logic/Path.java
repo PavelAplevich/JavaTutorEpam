@@ -10,13 +10,15 @@ public class Path {
 
     public static File getAuthentication(){
         URL resource = Authentication.class.getResource("Authentication.class");
-        String path = (resource.toString().substring(resource.toString().indexOf("file:") + 5, resource.toString().indexOf("authentication")) + "Authentication.txt").replaceAll("%20"," ");
+//        String path = (resource.toString().substring(resource.toString().indexOf("file:") + 5, resource.toString().indexOf("authentication")) + "Authentication.txt").replaceAll("%20"," ");
+        String path = "/home/pavlik/Documents/JavaTutorEpam/TrainingProjectSixApplicationOne/target/classes/Authentication.txt";
         return Paths.get(path).toFile();
     }
 
     public static File getCatalog(){
         URL resource = Authentication.class.getResource("Authentication.class");
-        String path = (resource.toString().substring(resource.toString().indexOf("file:") + 5, resource.toString().indexOf("authentication")) + "Catalog.txt").replaceAll("%20"," ");
+//        String path = (resource.toString().substring(resource.toString().indexOf("file:") + 5, resource.toString().indexOf("authentication")) + "Catalog.txt").replaceAll("%20"," ");
+        String path = "/home/pavlik/Documents/JavaTutorEpam/TrainingProjectSixApplicationOne/target/classes/Catalog.txt";
         return Paths.get(path).toFile();
     }
 }

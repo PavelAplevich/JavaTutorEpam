@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Main-Class: action.Main
+Class-Path: action.Main
+Class-Path: home/pavlik/.m2/repository/com/sun/mail/javax.mail/1.6.2/javax.mail-1.6.2.jar

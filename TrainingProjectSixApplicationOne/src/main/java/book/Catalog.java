@@ -1,4 +1,4 @@
-package catalog;
+package book;
 
 import java.util.ArrayList;
 

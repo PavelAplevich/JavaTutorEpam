@@ -1,0 +1,11 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="TrainingProjectSixApplicationOne:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/TrainingProjectSixApplicationOne_jar</output-path>
+    <root id="archive" name="TrainingProjectSixApplicationOne.jar">
+      <element id="module-output" name="TrainingProjectSixApplicationOne" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/sun/mail/javax.mail/1.6.2/javax.mail-1.6.2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/javax/activation/activation/1.1/activation-1.1.jar" path-in-jar="/" />
+      <element id="library" level="project" name="com.sun.mail:javax.mail:1.6.2" />
+    </root>
+  </artifact>
+</component>

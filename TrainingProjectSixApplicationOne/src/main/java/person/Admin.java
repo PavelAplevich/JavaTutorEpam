@@ -2,9 +2,10 @@ package person;
 
 import action.Action;
 import action.AdminAction;
-import catalog.Catalog;
+import book.Catalog;
 import menu.AdminMenu;
 import menu.Menu;
+
 import java.io.IOException;
 
 public class Admin extends Person{
@@ -14,7 +15,7 @@ public class Admin extends Person{
     }
 
     @Override
-    public void doAction(int action, Catalog catalog) throws IOException {
+    public void doAction(int action, Catalog catalog) throws IOException{
         Action act = new AdminAction();
         act.doAction(this, action, catalog);
     }

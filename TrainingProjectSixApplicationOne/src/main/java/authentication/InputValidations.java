@@ -9,6 +9,24 @@ import java.util.regex.Pattern;
 
 public class InputValidations {
 
+    public static boolean checkPointer(){
+        Scanner scanner = new Scanner(System.in);
+        if(scanner.hasNext()){
+            String symbol = scanner.next();
+            if(symbol.equals("D")){
+                return true;
+            } else if(symbol.equals("A")){
+                return false;
+            }else{
+                Output.printOutRed("Неккоректный ввод..");
+                return checkPointer();
+            }
+        } else {
+            Output.printOutRed("Неккоректный ввод..");
+            return checkPointer();
+        }
+    }
+
     public static int checkOneTwo(){
         Scanner scanner = new Scanner(System.in);
         if(scanner.hasNextInt()){

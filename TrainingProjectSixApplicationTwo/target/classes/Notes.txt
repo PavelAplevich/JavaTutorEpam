@@ -1,0 +1,47 @@
+<NOTE BEGIN>
+Topic:
+ОЧЕНЬ ВАЖНАЯ ЗАМЕТКА!
+Date:
+2019-11-04
+E-mail:
+pavel.aplevich@gmail.com
+Message:
+ТЕКСТ ОЧЕНЬ ВАЖНОЙ ЗАМЕТКИ
+КОТОРЫЙ Я РАЗНЕС НА ДВЕ ЧАСТИ
+<NOTE END>
+<NOTE BEGIN>
+Topic:
+THIS IS TEST
+TOPIC
+Date:
+2019-11-04
+E-mail:
+pav@ma.ru
+Message:
+THIS IS TEST LONG
+LONg MESSAGE
+<NOTE END>
+<NOTE BEGIN>
+Topic:
+THIS IS TEST
+TOPIC
+Date:
+2019-11-04
+E-mail:
+pav@ma.ru
+Message:
+THIS IS TEST LONG
+LONg MESSAGE
+<NOTE END>
+<NOTE BEGIN>
+Topic:
+THIS IS TEST
+TOPIC
+Date:
+2019-11-04
+E-mail:
+pav@ma.ru
+Message:
+THIS IS TEST LONG
+LONg MESSAGE
+<NOTE END>

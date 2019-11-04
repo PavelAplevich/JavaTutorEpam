@@ -1,4 +1,4 @@
-package catalog;
+package book;
 
 public class EBook extends Book{
     private String path;

@@ -2,11 +2,11 @@ package person;
 
 import action.Action;
 import action.UserAction;
-import catalog.Catalog;
+import book.Catalog;
 import menu.Menu;
 import menu.UserMenu;
+
 import java.io.IOException;
-import java.net.URISyntaxException;
 
 public class User extends Person{
     public User(String login, String email) {
@@ -14,7 +14,7 @@ public class User extends Person{
     }
 
     @Override
-    public void doAction(int action, Catalog catalog) throws IOException {
+    public void doAction(int action, Catalog catalog) throws IOException{
         Action act = new UserAction();
         act.doAction(this, action, catalog);
     }
