@@ -6,7 +6,9 @@ import java.io.File;
 import java.net.URL;
 import java.nio.file.Paths;
 
+//Класс, реализующий пути к файлам аутентификации и каталога.
 public class Path {
+    //Todo  Работает абсолютно не стабильно. Попробовать что-нибудь сделать, если будет время.
 
     public static File getAuthentication(){
         URL resource = Authentication.class.getResource("Authentication.class");

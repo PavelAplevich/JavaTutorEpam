@@ -11,8 +11,10 @@ import java.util.Date;
 import java.util.Properties;
 import java.util.Scanner;
 
+//Класс, реализующий отправку e-mail сообщений.
 public class email {
 
+    //Метод отправки сообщений на e-mail при добавлении книги в каталог.
     public static void sendEmail(final Person person, Book book) {
         String from = person.getEmail();
         // Сюда необходимо подставить SMTP сервер, используемый для отправки
@@ -30,8 +32,6 @@ public class email {
         props.put("mail.smtp.port", port);
         // Большинство SMTP серверов, используют авторизацию.
         props.put("mail.smtp.auth", "true");
-        // Включение debug-режима
-//        props.put("mail.debug", "true");
         // Авторизируемся.
         Scanner scanner = new Scanner(System.in);
         Output.printOutBlue("Пожалуйста, введите пароль от своей почты, для рассылки оповещения:");
@@ -43,7 +43,6 @@ public class email {
                 return new PasswordAuthentication(person.getEmail(), password);
             }
         });
-
         try {
             Message msg = new MimeMessage(session);
             msg.setFrom(new InternetAddress(from));
@@ -60,6 +59,7 @@ public class email {
         }
     }
 
+    //Метод, реализующий отправку сообщения администратору с запросом на добавление книги.
     public static void sendEmailtoAdmin(final Person person, Book book) throws IOException {
         // Сюда необходимо подставить адрес получателя сообщения
         String to = MyReader.findEmail("administrator");

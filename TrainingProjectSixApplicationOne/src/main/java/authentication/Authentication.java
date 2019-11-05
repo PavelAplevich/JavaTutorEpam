@@ -11,8 +11,10 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Scanner;
 
+//Класс, реализующий аутентификацию пользователя.
 public class Authentication {
 
+    //Метод, реализующий выбор.
     public static Person chooseUser() throws IOException {
         Output.printOutPurple("1. Создать нового пользователя.\n2. У меня есть аккаунт.");
         int choice = InputValidations.checkOneTwo();
@@ -23,6 +25,7 @@ public class Authentication {
         }
     }
 
+    //Внутренние методы, обеспечивающие проверку и логику.
     private static Person userIn() throws IOException {
         Output.printOutBlue("Ваш логин:");
         String login = "";

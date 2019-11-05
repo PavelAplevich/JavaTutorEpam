@@ -1,16 +1,19 @@
 package book;
 
+//Суперкласс, реализующий книгу в общем понятии.
 public class Book {
     private String title;
     private String author;
     private int pages;
 
+    //Конструктор
     public Book(String title, String author, int pages) {
         this.title = title;
         this.author = author;
         this.pages = pages;
     }
 
+    //Набор геттеров и сеттеров.
     public String getTitle() {
         return title;
     }

@@ -16,8 +16,10 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+//Класс, реализующий разнообразные логики.
 public class Logic {
 
+    //Метод создания массива интернет адресов для рассылки.
     public static InternetAddress[] createMailing(Person person) throws IOException, AddressException {
         ArrayList<String> resultList = new ArrayList<>();
         FileReader fileReader = new FileReader(Path.getAuthentication());
@@ -36,6 +38,7 @@ public class Logic {
         return result;
     }
 
+    //Метод создания каталога.
     public static Catalog createCatalog() throws FileNotFoundException {
         FileReader fileReader = new FileReader(Path.getCatalog());
         Scanner scanner = new Scanner(fileReader);
@@ -59,6 +62,7 @@ public class Logic {
         return new Catalog(list);
     }
 
+    //Метод удаления книги.
     public static Book removeOrReadBook(Catalog catalog, int count){
         Scanner scanner = new Scanner(System.in);
         if(scanner.hasNextInt()){
@@ -75,6 +79,7 @@ public class Logic {
         }
     }
 
+    //Метод, реализующий диалог с пользователем, по поводу продолжения работы с программой.
     public static void resume(Person person, Catalog catalog) throws IOException {
         Output.printOutBlue("\nВы желаете продолжить работу с программой?\n" +
                 "1. Да\n" +

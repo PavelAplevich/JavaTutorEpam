@@ -2,6 +2,7 @@ package note;
 
 import java.util.ArrayList;
 
+//Класс блокнота. Включает конструктор, набор сеттеров и геттеров и удобный toString.
 public class NotePad {
     private ArrayList<Note> notepad;
 

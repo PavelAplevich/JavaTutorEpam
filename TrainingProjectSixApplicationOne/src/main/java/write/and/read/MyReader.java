@@ -8,7 +8,6 @@ import book.PaperBook;
 import logic.Logic;
 import logic.Output;
 import logic.Path;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -16,8 +15,10 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+//Класс, реализующий различные считывания.
 public class MyReader {
 
+    //Метод, реализующий чтение книги из консоли.
     public static void readBook(Catalog catalog) throws FileNotFoundException {
         Output.printOutBlue("Введите название требуемой книги:");
         Scanner scanner = new Scanner(System.in);
@@ -47,7 +48,8 @@ public class MyReader {
         }
     }
 
-    public static void showBook(EBook EBook) throws FileNotFoundException {
+    //Метод, выводящий книгу в консоль.
+    private static void showBook(EBook EBook) throws FileNotFoundException {
         FileReader fileReader = new FileReader(EBook.getPath());
         Scanner scanner = new Scanner(fileReader);
         ArrayList<String> book = new ArrayList<>();
@@ -91,6 +93,7 @@ public class MyReader {
         }
     }
 
+    //Метод поиска строки в файле. Отвечает, существует ли такой пользователь и совпадает ли пароль.
     public static boolean findString(String string, File file) throws IOException {
         FileReader fileReader = new FileReader(file);
         Scanner scanner = new Scanner(fileReader);
@@ -115,6 +118,7 @@ public class MyReader {
         return false;
     }
 
+    //Метод поиска книги в каталоге.
     public static Catalog findBook(String string, Catalog catalog) {
         ArrayList<Book> list = new ArrayList<>();
         for(Book x: catalog.getCatalog()){
@@ -125,6 +129,7 @@ public class MyReader {
         return new Catalog(list);
     }
 
+    //Метод поиска e-mail в каталоге.
     public static String findEmail(String login) throws IOException {
         File file = Path.getAuthentication();
         FileReader fileReader = new FileReader(file);

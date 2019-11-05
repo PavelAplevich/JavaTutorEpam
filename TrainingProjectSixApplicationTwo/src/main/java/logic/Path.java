@@ -4,6 +4,7 @@ import java.io.File;
 import java.net.URL;
 import java.nio.file.Paths;
 
+//Класс реализует путь до файла с заметками.
 public class Path {
     public static File getNotes(){
         URL resource = Run.class.getResource("Run.class");

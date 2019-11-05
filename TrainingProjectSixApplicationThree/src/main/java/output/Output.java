@@ -1,5 +1,5 @@
 package output;
-//Класс реализующий различные выводы.
+
 public class Output {
 
     static public void print(String string){

@@ -5,10 +5,13 @@ import logic.Path;
 import write.and.read.MyReader;
 import java.io.IOException;
 import java.util.Scanner;
+import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+//Класс, реализующий различные проверки вводов.
 public class InputValidations {
 
+    //Метод проверки ввода при пролистывании.
     public static boolean checkPointer(){
         Scanner scanner = new Scanner(System.in);
         if(scanner.hasNext()){
@@ -27,6 +30,7 @@ public class InputValidations {
         }
     }
 
+    //Метод проверки ввода между 1 и 2.
     public static int checkOneTwo(){
         Scanner scanner = new Scanner(System.in);
         if(scanner.hasNextInt()){
@@ -43,6 +47,7 @@ public class InputValidations {
         }
     }
 
+    //Метод проверки создания логина.
     public static String checkLogin() throws IOException {
         Scanner scanner = new Scanner(System.in);
         String login;
@@ -60,6 +65,7 @@ public class InputValidations {
         }
     }
 
+    //Метод проверки создания пароля длиной от 8 до 36 знаков.
     public static String checkPassword(){
         Scanner scanner = new Scanner(System.in);
         String password;
@@ -77,20 +83,27 @@ public class InputValidations {
         }
     }
 
+    //Метод проверки e-mail.
     public static String checkEmail(){
         Scanner scanner = new Scanner(System.in);
         String email;
         Pattern pattern = Pattern.compile("/.+@.+\\..+/i");
-        //TODO pattern emaila ne rabotaet
         if(scanner.hasNext()){
             email = scanner.nextLine();
-            return email;
+            Matcher matcher = pattern.matcher(email);
+            if(matcher.find()){
+                return email;
+            } else {
+                Output.printOutRed("Неккоректный ввод! Попробуйте ещё раз, пожалуйста.");
+                return checkEmail();
+            }
         } else {
             Output.printOutRed("Неккоректный ввод! Попробуйте ещё раз, пожалуйста.");
             return checkEmail();
         }
     }
 
+    //Внутренний метод, реализующий проверку существования логина.
     private static boolean isExist(String login) throws IOException {
         return MyReader.findString(login, Path.getAuthentication());
     }

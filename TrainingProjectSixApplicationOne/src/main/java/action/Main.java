@@ -28,9 +28,9 @@ import book.Catalog;
 import logic.Logic;
 import logic.Output;
 import person.Person;
-
 import java.io.IOException;
 
+//Класс, точка входа в приложение.
 public class Main {
     public static void main(String[] args) throws IOException{
         Output.printOutGreen("Добро пожаловать в программу учета книг.");
@@ -39,6 +39,7 @@ public class Main {
         run(person, catalog);
     }
 
+    //Основной метод работы приложения.
     public static void run(Person person, Catalog catalog) throws IOException{
         person.showMenu();
         int action = person.chooseAction();

@@ -9,10 +9,12 @@ import menu.UserMenu;
 import java.io.IOException;
 
 public class User extends Person{
+    //Конструктор пользователя
     public User(String login, String email) {
         super(login, email);
     }
 
+    //Перезаписанные методы суперкласса для пользователя.
     @Override
     public void doAction(int action, Catalog catalog) throws IOException{
         Action act = new UserAction();

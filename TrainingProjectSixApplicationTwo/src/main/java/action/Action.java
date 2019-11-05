@@ -4,9 +4,9 @@ import note.NotePad;
 import output.Output;
 
 import java.util.Scanner;
-
+//Класс реализует процесс выбора для пользователя.
 public class Action {
-
+    //Метод выбора действия.
     public static int chooseAction(){
         Scanner scanner = new Scanner(System.in);
         if(scanner.hasNextInt()){
@@ -26,8 +26,8 @@ public class Action {
             return chooseAction();
         }
     }
-
-    public static void doAction(NotePad notePad, int choice){
+    //Метод запускающий реализацию выбора.
+    public static void doAction(NotePad notePad, int choice) throws InterruptedException {
         switch (choice){
             case 1:
                 ActionLogic.addNote(notePad);

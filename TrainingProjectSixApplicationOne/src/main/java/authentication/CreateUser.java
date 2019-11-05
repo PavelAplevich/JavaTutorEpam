@@ -6,7 +6,9 @@ import person.User;
 import write.and.read.MyWriter;
 import java.io.IOException;
 
+//Класс, реализующий создание нового пользователя.
 class CreateUser {
+
     static Person createNewUser() throws IOException{
         Output.printOutGreen("Введите ваш логин, пожалуйста.");
         String login = InputValidations.checkLogin();

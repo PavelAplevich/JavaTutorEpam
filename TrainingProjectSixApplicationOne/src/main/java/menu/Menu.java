@@ -2,7 +2,7 @@ package menu;
 
 import logic.Output;
 
-
+//Суперкласс, реализующий общее меню администратора и пользователя.
 public class Menu {
 
     public void showMenu() {

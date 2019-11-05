@@ -6,8 +6,10 @@ import person.Person;
 import java.io.IOException;
 import java.util.Scanner;
 
+//Класс, реализующий действия доступные администратору.
 public class AdminAction extends Action {
 
+    //Переопределенный метод, запускаюищий реализации действий.
     @Override
     public void doAction(Person person, int action, Catalog catalog) throws IOException {
         super.doAction(person, action, catalog);
@@ -21,6 +23,7 @@ public class AdminAction extends Action {
         }
     }
 
+    //Переопределенный метод выбора действия.
     @Override
     public int chooseAction(Person person) {
         Scanner scanner = new Scanner(System.in);

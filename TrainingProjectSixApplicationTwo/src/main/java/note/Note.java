@@ -2,6 +2,7 @@ package note;
 
 import java.time.LocalDate;
 
+//Класс заметки с конструктором, набором сеттеров и геттеров и удобным toString.
 public class Note {
     private String topic;
     private LocalDate date;

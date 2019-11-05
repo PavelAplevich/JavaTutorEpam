@@ -11,14 +11,14 @@ import logic.email;
 import person.Person;
 import write.and.read.MyReader;
 import write.and.read.MyWriter;
-
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.NoSuchElementException;
 import java.util.Scanner;
 
+//Класс, реализующий логику различных действий, доступных пользователю.
 public class ActionLogic {
 
+    //Метод вывода каталога.
     static void printCatalog(Catalog catalog){
         if(catalog.getCatalog().isEmpty()){
             Output.printOutRed("Каталог пуст!");
@@ -57,6 +57,7 @@ public class ActionLogic {
         }
     }
 
+    //Метод поиска книги.
     static void findBook(Catalog catalog){
         Output.printOutBlue("Введите название требуемой книги:");
         Scanner scanner = new Scanner(System.in);
@@ -75,10 +76,12 @@ public class ActionLogic {
         }
     }
 
+    //Метод постраничного чтения книги.
     static void readBook(Catalog catalog) throws FileNotFoundException {
         MyReader.readBook(catalog);
     }
 
+    //Метод добавления книги.
     static void addBook(Person person, Catalog catalog) throws IOException {
         Output.printOutBlue("Введите тип книги:\n" +
                 "1. Electronic book\n" +
@@ -101,8 +104,7 @@ public class ActionLogic {
         }
     }
 
-
-
+    //Метод удаления книги.
     static void removeBook(Catalog catalog) throws IOException {
         Output.printOutBlue("Введите название требуемой книги:");
         Scanner scanner = new Scanner(System.in);
@@ -128,6 +130,7 @@ public class ActionLogic {
         }
     }
 
+    //Метод, реализующий предложение книги администратору.
     static void offerBook(Person person) throws IOException {
         Output.printOutBlue("Введите тип книги:\n" +
                 "1. Electronic book\n" +
@@ -149,18 +152,14 @@ public class ActionLogic {
 
     }
 
+    //Внутренний метод, реализующий ввод количества страниц.
     private static int addInt(){
         Scanner scanner = new Scanner(System.in);
-        if(scanner.hasNext()){
-            try{
-                int pages = scanner.nextInt();
-                if(pages < 1){
-                    Output.printOutRed("Некорректный ввод. Попробуйте ещё раз.");
-                    return addInt();
-                } else {
-                    return pages;
-                }
-            } catch (NoSuchElementException e){
+        if(scanner.hasNextInt()){
+            int pages = scanner.nextInt();
+            if(pages > 1){
+                return pages;
+            } else {
                 Output.printOutRed("Некорректный ввод. Попробуйте ещё раз.");
                 return addInt();
             }
@@ -170,6 +169,7 @@ public class ActionLogic {
         }
     }
 
+    //Внутренний метод, реализующий ввод строки с проверкой.
     private static String addString(){
         Scanner scanner = new Scanner(System.in);
         if(scanner.hasNext()){
@@ -180,21 +180,19 @@ public class ActionLogic {
         }
     }
 
+    //Внутренинй метод, реализуюший проверку добавления типа книги.
     private static String addType() {
         Scanner scanner = new Scanner(System.in);
-        if(scanner.hasNext()){
-            try{
-                int choice = scanner.nextInt();
-                if(choice != 1 && choice != 2){
+        if(scanner.hasNextInt()) {
+            int type = scanner.nextInt();
+            switch (type) {
+                case 1:
+                    return "eBook";
+                case 2:
+                    return "PaperBook";
+                default:
                     Output.printOutRed("Некорректный ввод. Попробуйте ещё раз.");
                     return addType();
-                } else {
-                    if(choice == 1){return "eBook";}
-                    else{return "PaperBook";}
-                }
-            } catch (NoSuchElementException e){
-                Output.printOutRed("Некорректный ввод. Попробуйте ещё раз.");
-                return addType();
             }
         } else {
             Output.printOutRed("Некорректный ввод. Попробуйте ещё раз.");

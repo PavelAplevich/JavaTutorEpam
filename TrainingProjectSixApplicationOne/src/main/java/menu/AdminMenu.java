@@ -2,6 +2,7 @@ package menu;
 
 import logic.Output;
 
+//Класс, реализующий меню администратора
 public class AdminMenu extends Menu {
     @Override
     public void showMenu() {

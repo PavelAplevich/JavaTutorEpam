@@ -2,6 +2,7 @@ package menu;
 
 import logic.Output;
 
+//Класс, реализующий меню пользователя.
 public class UserMenu extends Menu {
     @Override
     public void showMenu() {

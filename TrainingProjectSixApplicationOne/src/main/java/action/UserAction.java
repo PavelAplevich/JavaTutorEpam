@@ -6,8 +6,10 @@ import person.Person;
 import java.io.IOException;
 import java.util.Scanner;
 
+//Класс, реализующий действия обычного пользователя.
 public class UserAction extends Action {
 
+    //Переопределенные методы выбора действия и запуска реализации.
     @Override
     public void doAction(Person person, int action, Catalog catalog) throws IOException{
         super.doAction(person, action, catalog);

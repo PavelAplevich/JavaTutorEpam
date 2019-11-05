@@ -8,12 +8,14 @@ import menu.Menu;
 
 import java.io.IOException;
 
+//Класс, реализующий администратора.
 public class Admin extends Person{
-
+    //Конструктор администратора.
     public Admin(String login, String email) {
         super(login, email);
     }
 
+    //Переопределенные методы суперкласса, для администратора
     @Override
     public void doAction(int action, Catalog catalog) throws IOException{
         Action act = new AdminAction();

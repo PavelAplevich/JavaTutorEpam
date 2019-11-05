@@ -6,20 +6,24 @@ import javax.mail.internet.AddressException;
 import javax.mail.internet.InternetAddress;
 import java.io.FileReader;
 import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Locale;
 import java.util.Scanner;
 
+//Класс, реализующий различные виды считывания из файла или консоли.
 public class MyReader {
 
+    //Метод получения строки из консоли.
     public static String getString() {
         String result = "";
-        Output.printRed("После окончания ввода строки, на новой строке введите \"EXIT\" и нажмите Enter");
+        Output.printRed("После окончания ввода строки, на новой строке введите \"EXIT/ВЫХОД\" и нажмите Enter");
         Scanner scanner = new Scanner(System.in);
         String line = scanner.nextLine();
-        while(!line.equals("EXIT")){
+        while(!line.equals("EXIT") && !line.equals("ВЫХОД")){
             result = result.concat("\n" + line);
             line = scanner.nextLine();
         }
@@ -31,9 +35,8 @@ public class MyReader {
         }
     }
 
-
+    //Метод получения e-mail из консоли.
     public static String getEmail() {
-        String result = "";
         Scanner scanner = new Scanner(System.in);
         String line = scanner.nextLine();
         if(isValidEmailAddress(line)){
@@ -45,17 +48,21 @@ public class MyReader {
 
     }
 
-    private static boolean isValidEmailAddress(String email) {
-        boolean result = true;
-        try {
-            InternetAddress emailAddr = new InternetAddress(email);
-            emailAddr.validate();
-        } catch (AddressException ex) {
-            result = false;
+    //Метод получения даты из консоли
+    public static LocalDate getDate(){
+        Output.printBlue("Введите дату в формате гггг-мм-дд .");
+        Scanner scanner = new Scanner(System.in);
+        String input = scanner.nextLine();
+        if(isValidDate(input)){
+            LocalDate localDate = LocalDate.parse(input);
+            return localDate;
+        } else {
+            Output.printRed("Введите корректную дату..");
+            return getDate();
         }
-        return result;
     }
 
+    //Метод получения списка заметок.
     public static ArrayList<Note> getNotePad() throws IOException {
         ArrayList<Note> notes = new ArrayList<>();
         FileReader fileReader = new FileReader(Path.getNotes());
@@ -85,6 +92,29 @@ public class MyReader {
         }
         fileReader.close();
         return notes;
+    }
+
+    //Внутренние методы, реализующий проверки ввода.
+    private static boolean isValidDate(String input) {
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+        try {
+            format.parse(input);
+            return true;
+        }
+        catch(ParseException e){
+            return false;
+        }
+    }
+
+    private static boolean isValidEmailAddress(String email) {
+        boolean result = true;
+        try {
+            InternetAddress emailAddr = new InternetAddress(email);
+            emailAddr.validate();
+        } catch (AddressException ex) {
+            result = false;
+        }
+        return result;
     }
 
 }

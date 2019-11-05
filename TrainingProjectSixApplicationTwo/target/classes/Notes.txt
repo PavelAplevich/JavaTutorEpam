@@ -1,47 +1,64 @@
 <NOTE BEGIN>
 Topic:
-ОЧЕНЬ ВАЖНАЯ ЗАМЕТКА!
+Привет
+EXTI
 Date:
-2019-11-04
+2019-11-05
 E-mail:
-pavel.aplevich@gmail.com
+pav@gma.ru
 Message:
-ТЕКСТ ОЧЕНЬ ВАЖНОЙ ЗАМЕТКИ
-КОТОРЫЙ Я РАЗНЕС НА ДВЕ ЧАСТИ
+Текст заметки
 <NOTE END>
 <NOTE BEGIN>
 Topic:
-THIS IS TEST
-TOPIC
+Мой топик
 Date:
-2019-11-04
+2019-11-05
 E-mail:
-pav@ma.ru
+pavel@gmail.com
 Message:
-THIS IS TEST LONG
-LONg MESSAGE
+Моё сообщение
 <NOTE END>
 <NOTE BEGIN>
 Topic:
-THIS IS TEST
-TOPIC
+now how end
 Date:
-2019-11-04
+2019-11-05
 E-mail:
-pav@ma.ru
+dar@i.ru
 Message:
-THIS IS TEST LONG
-LONg MESSAGE
+MESSAGE
 <NOTE END>
 <NOTE BEGIN>
 Topic:
-THIS IS TEST
 TOPIC
 Date:
-2019-11-04
+2019-11-05
 E-mail:
-pav@ma.ru
+dar@i.ru
 Message:
-THIS IS TEST LONG
-LONg MESSAGE
+MESSAGE1
+<NOTE END>
+<NOTE BEGIN>
+Topic:
+This is topic
+One
+exit
+Date:
+2019-11-05
+E-mail:
+pav@i.ag
+Message:
+THis is messagge
+One
+<NOTE END>
+<NOTE BEGIN>
+Topic:
+Это тестовая заметка
+Date:
+2019-11-05
+E-mail:
+pa@aga.ry
+Message:
+С ТОПИКОМ и МЕССАДЖЕМ
 <NOTE END>

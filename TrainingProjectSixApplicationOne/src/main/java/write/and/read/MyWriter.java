@@ -7,8 +7,10 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
+//Класс реализующий различные записи.
 public class MyWriter {
 
+    //Метод добавления книги в каталог.
     public static void addBook(Book book, Catalog catalog) throws IOException {
         File file = Path.getCatalog();
         FileWriter fileWriter = new FileWriter(file,false);
@@ -17,6 +19,7 @@ public class MyWriter {
         fileWriter.close();
     }
 
+    //Метод добавления нового пользователя.
     public static void writeNewUser(String login, String password, String email) throws IOException {
         File file = Path.getAuthentication();
         FileWriter fileWriter = new FileWriter(file, true);
@@ -30,6 +33,7 @@ public class MyWriter {
         fileWriter.close();
     }
 
+    //Метод кодировки пароля пользователя.
     public static byte[] encode(String password, String key) {
         byte[] passwordAr = password.getBytes();
         byte[] keyAr = key.getBytes();
@@ -40,7 +44,7 @@ public class MyWriter {
         return res;
     }
 
-
+    //Метод записи каталога.
     public static void writeCatalog(Catalog catalog) throws IOException {
         FileWriter fileWriter = new FileWriter(Path.getCatalog(),false);
         fileWriter.write(catalog.toString());

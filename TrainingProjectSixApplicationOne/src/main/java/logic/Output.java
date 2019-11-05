@@ -1,5 +1,6 @@
 package logic;
 
+//Класс, реализующий различные выводы.
 public class Output {
 
     static public void printOut(String string){

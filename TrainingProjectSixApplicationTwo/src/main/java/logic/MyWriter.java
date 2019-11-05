@@ -6,6 +6,7 @@ import note.NotePad;
 import java.io.FileWriter;
 import java.io.IOException;
 
+//Класс реализующий запись заметок в файл.
 public class MyWriter {
     public static void writeNotePad(NotePad notePad) throws IOException {
         FileWriter fileWriter = new FileWriter(Path.getNotes(), false);
