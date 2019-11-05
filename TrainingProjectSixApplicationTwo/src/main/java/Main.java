@@ -29,8 +29,8 @@ import java.io.IOException;
     осуществлять код, непосредственно добавляющий информацию.
  */
 public class Main {
-    public static void main(String[] args) throws IOException {
-        Output.printYellow("Вас приветствует приложение по работе с заметками. Выберите необходимое действи:");
+    public static void main(String[] args) throws IOException, InterruptedException {
+        Output.printYellow("Вас приветствует приложение по работе с заметками. Выберите необходимое действие:");
         NotePad notePad = new NotePad(MyReader.getNotePad());
         Run.run(notePad);
         MyWriter.writeNotePad(notePad);
