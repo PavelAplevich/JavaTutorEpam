@@ -1,0 +1,34 @@
+<users>
+    <administrator id = "1">
+        <login>
+            administrator
+        </login>
+        <password>
+            0123456789
+        </password>
+    </administrator>
+    <administrator id = "2">
+        <login>
+            admin
+        </login>
+        <password>
+            0123456789
+        </password>
+    </administrator>
+    <user id = "100">
+        <login>
+            user
+        </login>
+        <password>
+            0123456789
+        </password>
+    </user>
+    <user id = "101">
+        <login>
+            user1
+        </login>
+        <password>
+            0123456789
+        </password>
+    </user>
+</users>

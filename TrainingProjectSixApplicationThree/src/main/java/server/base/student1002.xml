@@ -1,0 +1,23 @@
+<portfolio id = "1002">
+    <first_name>
+        Иван
+    </first_name>
+    <second_name>
+        Иванов
+    </second_name>
+    <patronymic>
+        Иванович
+    </patronymic>
+    <age>
+        27
+    </age>
+    <characteristic>
+        Спокоен. Трудолюбив. Склонность к точным наукам. КМС по шахматам. КМС по самбо.
+    </characteristic>
+    <average_mark>
+        95
+    </average_mark>
+    <other_marks>
+        Кокаиновый наркоман. Жертва бланков с примерами.
+    </other_marks>
+</portfolio>

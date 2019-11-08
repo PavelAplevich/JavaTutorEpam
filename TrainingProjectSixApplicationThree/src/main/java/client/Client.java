@@ -1,6 +1,6 @@
 package client;
 
-import output.Output;
+import server.output.Output;
 
 import java.io.*;
 import java.net.Socket;
@@ -9,19 +9,14 @@ public class Client {
 
     private static Socket clientSocket;
     private static BufferedReader reader;
-    private static BufferedReader in;
-    private static BufferedWriter out;
+    private static DataInputStream in;
+    private static DataOutputStream out;
 
     public static void main(String[] args) {
         try {
             try {
-                // адрес - локальный хост, порт - 4004, такой же как у сервера
-                clientSocket = new Socket("localhost", 4004);
-                reader = new BufferedReader(new InputStreamReader(System.in));
-                in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
-                out = new BufferedWriter(new OutputStreamWriter(clientSocket.getOutputStream()));
                 Output.printBlue("Вас приветствует Архив! Пожалуйста, авторизируйтесь..");
-                run();
+                start();
             } finally {
                 clientSocket.close();
                 in.close();
@@ -32,26 +27,22 @@ public class Client {
         }
     }
 
-    private static void run() throws IOException {
+    private static void start() throws IOException {
+        // адрес - локальный хост, порт - 4004, такой же как у сервера
+        clientSocket = new Socket("localhost", 4004);
+        reader = new BufferedReader(new InputStreamReader(System.in));
+        in = new DataInputStream(clientSocket.getInputStream());
+        out = new DataOutputStream(clientSocket.getOutputStream());
         authentication();
-        String action = in.readLine();
-        Output.printBlue(action); // Предоставление списка действий.
-        chooseAction(action);
-        String 
+        Output.printPurple(in.readUTF()); //Получили список действий.
+        chooseAction();
+        doAction();
     }
 
-    private static void chooseAction(String action) throws IOException {
-        String choice = reader.readLine();
-        out.write(choice);
-        String serverAnswer = in.readLine();
-        while(!serverAnswer.equals("ActionAccept")){
-            Output.printRed("Некорректный ввод. Повторите выбор ещё раз.");
-            Output.printBlue(action);
-            choice = reader.readLine();
-            out.write(choice);
-            out.flush();
-        }
-        out .flush();
+    private static void doAction() throws IOException {
+        Output.printRed(in.readUTF());
+        out.writeUTF(reader.readLine());
+        Output.printBlue(in.readUTF());
     }
 
     private static void authentication() throws IOException {
@@ -59,22 +50,24 @@ public class Client {
         String login = reader.readLine();
         Output.printBlue("Введите пароль:");
         String password = reader.readLine();
-        out.write(login);
-        out.write(password);
-        String serverAnswer = in.readLine();
-        while(!serverAnswer.equals("LoginAccept")) {
-            Output.printRed("Введен неправильный логин и/или пароль.");
-            Output.printBlue("Введите логин:");
-            login = reader.readLine();
-            Output.printBlue("Введите пароль:");
-            password = reader.readLine();
-            out.write(login); // отправляем login
-            out.write(password);// отправляем password
-            out.flush();
-            serverAnswer = in.readLine(); // ждём, что скажет сервер
+        Output.printBlue("Спасибо!");
+        out.writeUTF(login);
+        out.writeUTF(password);
+        String serverAnswer = in.readUTF();
+        Output.print(in.readUTF());
+        if(!serverAnswer.equals("LoginAccept")) {
+            authentication();
         }
-        Output.printGreen("Добро пожаловать, " + login);
-        out.flush();
+    }
+
+    private static void chooseAction() throws IOException {
+        String choice = reader.readLine();
+        out.writeUTF(choice);
+        String serverAnswer = in.readUTF();
+        Output.print(in.readUTF());
+        if(!serverAnswer.equals("ActionAccept")){
+            chooseAction();
+        }
     }
 
 

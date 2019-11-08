@@ -1,4 +1,4 @@
-package output;
+package client.output;
 
 public class Output {
 

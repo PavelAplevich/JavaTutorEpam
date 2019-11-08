@@ -1,0 +1,23 @@
+<portfolio id = "1003">
+    <first_name>
+        Петр
+    </first_name>
+    <second_name>
+        Петров
+    </second_name>
+    <patronymic>
+        Петрович
+    </patronymic>
+    <age>
+        28
+    </age>
+    <characteristic>
+        Агрессивен. Ленив. Склонность к нытью.
+    </characteristic>
+    <average_mark>
+        47
+    </average_mark>
+    <other_marks>
+        Алкоголик. Очередная жертва бланков с примерами.
+    </other_marks>
+</portfolio>
