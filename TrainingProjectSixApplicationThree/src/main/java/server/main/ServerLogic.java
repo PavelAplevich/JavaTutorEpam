@@ -1,21 +1,22 @@
-package server.logic;
+package server.main;
 
 import org.xml.sax.SAXException;
 import server.action.Action;
 import server.authentication.Authentication;
 import server.persons.Person;
 import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.TransformerException;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.Socket;
 import java.util.NoSuchElementException;
 
+//Класс реализующий минимальную логику сервера.
 public class ServerLogic {
 
-    public static void start(DataInputStream in, DataOutputStream out, Socket clientSocket) throws IOException, ParserConfigurationException, SAXException {
-        in = new DataInputStream(clientSocket.getInputStream());
-        out = new DataOutputStream(clientSocket.getOutputStream());
+    //Метод запускает начальное общение с пользователем и процедуру аутентификации.
+    public static void start(DataInputStream in, DataOutputStream out, Socket clientSocket) throws IOException, ParserConfigurationException, SAXException, TransformerException {
         String login = in.readUTF();
         String password = in.readUTF();
         try {
@@ -31,7 +32,8 @@ public class ServerLogic {
         }
     }
 
-    public static void actionStart(Person person,DataInputStream in, DataOutputStream out, Socket clientSocket) throws IOException, ParserConfigurationException, SAXException {
+    //Метод передает цепочку действий дальше по логике.
+    public static void actionStart(Person person,DataInputStream in, DataOutputStream out, Socket clientSocket) throws IOException, ParserConfigurationException, SAXException, TransformerException {
         int action = Integer.parseInt(in.readUTF());
         person.doAction(action, in, out, clientSocket);
     }

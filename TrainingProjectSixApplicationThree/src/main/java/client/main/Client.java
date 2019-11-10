@@ -1,10 +1,10 @@
-package client;
+package client.main;
 
-import server.output.Output;
-
+import client.output.Output;
 import java.io.*;
 import java.net.Socket;
 
+//Точка входа клиента.
 public class Client {
 
     private static Socket clientSocket;
@@ -27,22 +27,45 @@ public class Client {
         }
     }
 
+    //Основной метод работы клиента.
     private static void start() throws IOException {
         // адрес - локальный хост, порт - 4004, такой же как у сервера
         clientSocket = new Socket("localhost", 4004);
         reader = new BufferedReader(new InputStreamReader(System.in));
         in = new DataInputStream(clientSocket.getInputStream());
         out = new DataOutputStream(clientSocket.getOutputStream());
-        authentication();
-        Output.printPurple(in.readUTF()); //Получили список действий.
-        chooseAction();
-        doAction();
+        authentication();   //проходим аутентификацию.
+        chooseAction();     //Выбор действия.
+        doAction();         //Выполнение действия.
+        resume();           //Продолжение работы или выход.
+    }
+
+    private static void resume() throws IOException {
+        Output.printRed(in.readUTF());
+        String choice = reader.readLine();
+        while(choice.equals("Да")){
+            out.writeUTF(choice);
+            chooseAction();
+            doAction();
+            Output.printRed(in.readUTF());
+            choice = reader.readLine();
+        }
+        out.writeUTF(choice);
+        Output.printBlue(in.readUTF());
     }
 
     private static void doAction() throws IOException {
         Output.printRed(in.readUTF());
         out.writeUTF(reader.readLine());
-        Output.printBlue(in.readUTF());
+        String message = in.readUTF();
+        while(!message.equals("quit")){
+            if(message.equals("input")){
+                out.writeUTF(reader.readLine());
+            } else {
+                Output.printBlue(message);
+            }
+            message = in.readUTF();
+        }
     }
 
     private static void authentication() throws IOException {
@@ -61,6 +84,7 @@ public class Client {
     }
 
     private static void chooseAction() throws IOException {
+        Output.printPurple(in.readUTF());
         String choice = reader.readLine();
         out.writeUTF(choice);
         String serverAnswer = in.readUTF();

@@ -1,5 +1,5 @@
 package server.archive;
-
+//Класс, реализующий дело.
 public class Document {
     private int id;
     private String firstName;
@@ -10,6 +10,7 @@ public class Document {
     private int averageMark;
     private String otherMarks;
 
+    //Конструктор
     public Document(int id, String firstName, String secondName, String patronymic, int age, String characteristic, int averageMark, String otherMarks) {
         this.id = id;
         this.firstName = firstName;
@@ -21,6 +22,7 @@ public class Document {
         this.otherMarks = otherMarks;
     }
 
+    //Набор геттеров и сеттеров.
     public int getId() {
         return id;
     }
@@ -85,15 +87,16 @@ public class Document {
         this.otherMarks = otherMarks;
     }
 
+    //Удобный  toString.
     @Override
     public String toString() {
-        return "Document id: " + id +
-                "\nFirstName: " + firstName +
-                "\nSecondName: " + secondName +
+        return "Document_id: " + id +
+                "\nFirst_Name: " + firstName +
+                "\nSecond_Name: " + secondName +
                 "\nPatronymic: " + patronymic +
                 "\nAge: " + age +
                 "\nCharacteristic: " + characteristic +
-                "\nAverageMark: " + averageMark +
-                "\nOtherMarks: " + otherMarks ;
+                "\nAverage_Mark: " + averageMark +
+                "\nOther_Marks: " + otherMarks ;
     }
 }

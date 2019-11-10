@@ -11,6 +11,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 
+//Класс, реализующий архив дел.
 public class Archive {
     private ArrayList<Document> documents = new ArrayList<>();
 
@@ -26,9 +27,10 @@ public class Archive {
         this.documents = documents;
     }
 
+    //Метод создания архива.
     public static Archive createArchive() throws IOException, SAXException, ParserConfigurationException {
         //// TODO: 08.11.2019 и тут прикрутить путь, если будет время.
-        File folder = new File("/home/pavlik/Documents/JavaTutorEpam/TrainingProjectSixApplicationThree/src/main/java/server/base");
+        File folder = new File("/Users/dariaapril/IDEA projects/TrainingProjectSixApplicationThree/src/main/java/server/base");
         ArrayList<Document> documents = new ArrayList<>();
         File[] files = reverse(folder.listFiles());
         for(File file:files){
@@ -46,6 +48,7 @@ public class Archive {
         return files;
     }
 
+    //Внутренний метод, для создания архива.
     private static Document createDocument(File file) throws ParserConfigurationException, IOException, SAXException {
         DocumentBuilderFactory dbfactory = DocumentBuilderFactory.newInstance();
         DocumentBuilder documentBuilder = dbfactory.newDocumentBuilder();

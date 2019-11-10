@@ -3,8 +3,10 @@ package server.action;
 import server.persons.Administrator;
 import server.persons.Person;
 
+//Класс действий для пользователя.
 public class Action {
 
+    //Метод возвращает перечень действий в зависимости от прав пользователя.
     public static String actionList(Person person) {
         String actionList = "Выберите необходимое действие:\n";
         if(person instanceof Administrator){

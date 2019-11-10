@@ -1,4 +1,4 @@
-<portfolio id = "1002">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><portfolio id="1002">
     <first_name>
         Иван
     </first_name>
@@ -9,7 +9,7 @@
         Иванович
     </patronymic>
     <age>
-        27
+        28
     </age>
     <characteristic>
         Спокоен. Трудолюбив. Склонность к точным наукам. КМС по шахматам. КМС по самбо.
